@@ -1,0 +1,104 @@
+<Project id="9c9f9b95-7dbd-446e-b146-0d0bfcb05f76" namespace="" name="뉴스알리미프로젝트" desc="" category="project" workType="foreground" version="2.70" lastPublishedDate="2024-09-03 13:43:37" lastPublishedBy="chlee" createdDate="2024-01-09 10:57:14" createdBy="eunsu9991" lastPublishedServer="192.168.0.50.tenant_1" latestProcess="P_뉴스알리미" designerVersion="3.1.124.00322" DesignedBy="">
+  <SharedTask isExpended="false" />
+  <NormalTask isExpended="true">
+    <Group category="NormalTaskGroup" isChanged="Y" desc="" isExpended="true" name="Excel이용">
+      <LinkItem id="9d3cb568-95fe-4f31-89c9-018bf9f747a7" category="NormalTask" isChanged="Y" desc="" hash="E/qCzdYKi2WSgDgwf3fxleCeSzsOoUHSPcH2u1dIYYw=" updatedDate="2024-09-03T04:43:38.068Z" stepCount="7" name="T_config에서_정보가져오기">
+        <Properties />
+      </LinkItem>
+    </Group>
+    <Group category="NormalTaskGroup" isChanged="Y" desc="" isExpended="true" name="검색">
+      <LinkItem id="f30a26f2-fe0d-4aa7-b355-4dfd16f3812f" category="NormalTask" isChanged="Y" desc="내용 크롤링 추가해야 한다" hash="T0iyl2ZQF0WmE3EaO0eD3Nr+ovU85BzwBrV4Cow3gUs=" updatedDate="2024-09-03T04:43:38.146Z" stepCount="18" name="T_구글크롤링">
+        <Properties />
+      </LinkItem>
+      <LinkItem id="fd0e4e82-b884-4114-bae1-991cf33474a4" category="NormalTask" isChanged="Y" desc="내용 크롤링 추가해야 한다&#xD;&#xA;&#xD;&#xA;return값: 제목, 신문사, 내용, url" hash="xQFL0jfHsAiaR1vB8xGgOxGajtQk0ma10F/NAxLb2NA=" updatedDate="2024-09-03T04:43:38.282Z" stepCount="18" name="T_네이버크롤링">
+        <Properties />
+      </LinkItem>
+      <LinkItem id="69bfce03-2efa-4471-90e9-46ec6c8e340a" category="NormalTask" isChanged="Y" desc="" hash="Ox0aqpWxQq45WUjNy1FVGtJjGTMNIzAnUjWG9/mkitA=" updatedDate="2024-09-03T04:43:38.378Z" stepCount="2" name="T_중복제거">
+        <Properties />
+      </LinkItem>
+    </Group>
+    <Group category="NormalTaskGroup" isChanged="Y" desc="" isExpended="true" name="메일전송">
+      <LinkItem id="e4ead40a-6a74-4a13-860b-07b18b38fe87" category="NormalTask" isChanged="Y" desc="" hash="wj9ZH+eCHoTvCxYHVjzq7bkGu0mHzRD6qxMJHYOynFk=" updatedDate="2024-09-03T04:43:38.107Z" stepCount="4" name="T_html형식변환">
+        <Properties />
+      </LinkItem>
+      <LinkItem id="ba4edf4a-64b4-4d08-9933-032a2370042b" category="NormalTask" isChanged="Y" desc="" hash="WWVLjJgF3McccHUTPJfl3VI4JnR80GhDX1K4vDzsg6I=" updatedDate="2024-09-03T04:43:38.353Z" stepCount="3" name="T_메일전송">
+        <Properties />
+      </LinkItem>
+    </Group>
+    <LinkItem id="c0060970-6e5e-48fc-9be2-445709462052" category="NormalTask" isChanged="Y" desc="" hash="BHKBIL/jB1aJ2ZjJu1OYOgEtGgYNljFnCWPiOB6bJ7c=" updatedDate="2024-09-03T04:43:38.206Z" stepCount="2" name="T_날짜포맷">
+      <Properties />
+    </LinkItem>
+  </NormalTask>
+  <Event isExpended="true">
+    <LinkItem id="243a7d42-465e-4b5b-a2fa-082f80c76081" category="Event" isChanged="Y" desc="" hash="dINvSZYCr6P04T64Ocb6ECq4CJplBBc1ANoElZOeeNQ=" updatedDate="2024-09-03T04:43:37.875Z" stepCount="1" name="E_4번째로이동">
+      <Properties />
+    </LinkItem>
+    <LinkItem id="cb8b8183-68cb-4f1d-a0c0-01d7f589b742" category="Event" isChanged="Y" desc="" hash="ZkChimnpEO6ec9wVSsiUEB45S/vR+QUZ+1XfPqKrokM=" updatedDate="2024-09-03T04:43:37.895Z" stepCount="1" name="E_5번째로이동">
+      <Properties />
+    </LinkItem>
+    <LinkItem id="50cccaba-2237-4ac0-b047-56a059c199e1" category="Event" isChanged="Y" desc="" hash="uGnW3X/PoZ2V74ElfZLCosl680xT3zXjncsM2fqnWsM=" updatedDate="2024-09-03T04:43:37.926Z" stepCount="2" name="E_NotVisible뉴스버튼">
+      <Properties />
+    </LinkItem>
+    <LinkItem id="98628bfc-8ee8-46c8-9d9f-e3119e67e4e8" category="Event" isChanged="Y" desc="" hash="E/kKTlAwYRuHN1JXylxWbJyxBnS8XDiJi/sWrR0Nb00=" updatedDate="2024-09-03T04:43:37.964Z" stepCount="1" name="E_구글뉴스클릭">
+      <Properties />
+    </LinkItem>
+    <LinkItem id="34cb2f0b-354b-48bb-9494-a9d43c993cdf" category="Event" isChanged="Y" desc="" hash="F6OgObP7j63yzxAYcKF8zhCwb9hhmyLNs9VQsgV7FOk=" updatedDate="2024-09-03T04:43:37.997Z" stepCount="1" name="E_다른_디자인의_뉴스버튼">
+      <Properties />
+    </LinkItem>
+  </Event>
+  <Process isExpended="true">
+    <LinkItem id="0630864e-a847-4cd0-9c53-a73c38526b2d" category="Process" isChanged="Y" desc="" hash="0vpttFUm6D1EZl139XBnj1LCZykjCNkn6kIW2AQR8RU=" updatedDate="2024-09-03T04:43:38.041Z" stepCount="19" name="P_뉴스알리미">
+      <Properties />
+    </LinkItem>
+  </Process>
+  <CustomLibraries isExpended="false" />
+  <LibraryTemplate isExpended="false" />
+  <Resources isExpended="true">
+    <LinkItem id="a0c0041c-2499-4de0-8f06-016b38624520" category="Resource" isChanged="Y" desc="" hash="zDCnPR/TZT+VTDoQtr3fIvyJWO+K6wJNJW9+EmNCNyQ=" updatedDate="2024-04-16T01:17:16.4Z" stepCount="" name="google.png">
+      <Properties />
+    </LinkItem>
+    <LinkItem id="345ffd47-932d-4b7d-8470-1e338a22da93" category="Resource" isChanged="Y" desc="" hash="6BNPx61RH8E0qyngDjdF9z3j+J9hBVYS5jVYwQVzuVA=" updatedDate="2024-04-16T01:17:16.401Z" stepCount="" name="naver.png">
+      <Properties />
+    </LinkItem>
+    <LinkItem id="5da9ae06-a3cb-48b6-ac35-898cd35fcc7c" category="Resource" isChanged="Y" desc="" hash="zRAr8fbgbq6nDKWpABECbtc2Oz3V8BHGpCUG+oGOSOk=" updatedDate="2024-08-29T00:44:54.215Z" stepCount="" name="뉴스알리미_config.xlsx">
+      <Properties />
+    </LinkItem>
+  </Resources>
+  <RemoteProcess isExpended="false" />
+  <RecorderData isExpended="false" />
+  <Asset />
+  <Library />
+  <Variables>
+    <Variable name="errorMsg" scope="Global" valueType="Any" formatType="Any" initValue="'검색 결과가 없습니다'" desc="검색결과가 없을 때" colorValue="#FFAA77FF" showMarker="False" />
+    <Variable name="twodaysAgo" scope="Global" valueType="Any" formatType="Any" initValue="" desc="2일전 날짜 (YYYY.MM.DD)" colorValue="#FF3C79F5" showMarker="False" />
+    <Variable name="today" scope="Global" valueType="Any" formatType="Any" initValue="" desc="오늘 날짜 (YYYY.MM.DD)" colorValue="#FFFF731D" showMarker="False" />
+    <Variable name="yesterday" scope="Global" valueType="Any" formatType="Any" initValue="" desc="어제 날짜 (YYYY.MM.DD)" colorValue="#FFEB455F" showMarker="False" />
+    <Variable name="New" scope="Global" valueType="Any" formatType="Any" initValue="" desc="" colorValue="#FF98DFD6" showMarker="False" />
+    <Variable name="resultCrawl" scope="Global" valueType="Any" formatType="Any" initValue="{}" desc="" colorValue="#FF19A7CE" showMarker="False" />
+  </Variables>
+  <Properties>
+    <Property key="PlayOption_StepInterval" controlType="Int32" valueType="System.Int32" formatType="Integer" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="1" />
+    <Property key="PlayOption_DisableDrawBounds" controlType="Boolean" valueType="System.Boolean" formatType="Boolean" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="False" />
+    <Property key="PlayOption_InvokeFirst" controlType="Boolean" valueType="System.Boolean" formatType="Boolean" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="False" />
+    <Property key="PlayOption_AllowUploadDumpScreenResult" controlType="Boolean" valueType="System.Boolean" formatType="Boolean" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="False" />
+  </Properties>
+  <DisplayLibraries>
+    <string>Flow</string>
+    <string>Win</string>
+    <string>Net</string>
+    <string>Excel</string>
+    <string>Desktop</string>
+    <string>Chrome</string>
+    <string>ImageRecognition</string>
+    <string>DataConverter</string>
+    <string>Empty</string>
+    <string>PushMessage</string>
+    <string>OpenAI</string>
+    <string>Android</string>
+    <string>Abbyy</string>
+    <string>CognitiveLibrary</string>
+    <string>Drive</string>
+    <string>NativeApp</string>
+    <string>Orchestra</string>
+  </DisplayLibraries>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>CflFplmF8XExv0jYzrpHzIwomNA=</DigestValue></Reference></SignedInfo><SignatureValue>cSAZjpvvmavhEpG2ifvtSOahcWsIipdxkXc+sFc5DSsb0SP4/vAa8n38mi1nWE4dc2ybTQKcrwWbh+phRcAxS2HZtXqyDLFIfLJ9gKxzQR4dd5qRL1NSdLtb5F8baOgqUflUPJRKnuSoV0mJpo9LUPwxjHervG59S0Ntod+qCrW3H4kMQJVWEJKChREqT6EwrlevJ/vdOWrh4spm8DoZoepxp1QzgCOYsNP6TDcdipksiejC3wRGJhKFEd8RzByIw9DQ1sc0Xm1dcGlPobrLJIYQHmNAECb3i4DEznvGtqAVTbH56F/pmdw0OeU678dkS3LHT05GD8LLlPESOWAiBg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=DESIGNER-00039, O=192.168.0.50, OU=IPA_DESIGNER, L="", S="", C=""</X509SubjectName></X509Data></KeyInfo></Signature></Project>

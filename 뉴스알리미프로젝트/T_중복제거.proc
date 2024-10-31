@@ -1,0 +1,78 @@
+<Process id="69bfce03-2efa-4471-90e9-46ec6c8e340a" type="task" workType="foreground" name="T_중복제거" version="1.0" designerVersion="3.1.124.00322" readonly="false" isValid="true" DesignedBy="Designer" Template="" StepCount="2" Orientation="horizontal">
+  <Properties>
+    <Property key="Description" controlType="PropertyItemTextEditorView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" enabled="True" />
+    <Property key="onBefore" controlType="PropertyItemEventHandlerView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" enabled="True" />
+    <Property key="onAfter" controlType="PropertyItemEventHandlerView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" enabled="True" />
+    <Property key="onError" controlType="PropertyItemEventHandlerView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" enabled="True" />
+    <Property key="Timeout" controlType="Int32" valueType="System.Int32" formatType="Integer" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="0" />
+    <Property key="RunningTime" controlType="Int32" valueType="System.Int32" formatType="Integer" required="False" visible="True" readonly="True" encrypted="False" isChanged="N" value="15" />
+    <Property key="Os" controlType="String" valueType="System.String" formatType="String" required="False" visible="True" readonly="True" encrypted="False" isChanged="N" value="Microsoft Windows 11 Pro64비트" />
+    <Property key="Resolution" controlType="String" valueType="System.String" formatType="String_Size" required="False" visible="True" readonly="True" encrypted="False" isChanged="N" value="3840x1080" />
+    <Property key="CreatedDate" controlType="String" valueType="System.String" formatType="String_DateTime" required="False" visible="True" readonly="True" encrypted="False" isChanged="N" value="2024-03-06 09:32:23" />
+    <Property key="CreatedBy" controlType="String" valueType="System.String" formatType="String" required="False" visible="True" readonly="True" encrypted="False" isChanged="N" value="eunsu9991" />
+    <Property key="LastModifiedDate" controlType="String" valueType="System.String" formatType="String_DateTime" required="False" visible="True" readonly="True" encrypted="False" isChanged="N" value="2024-09-03 13:39:56" />
+    <Property key="LastModifiedBy" controlType="String" valueType="System.String" formatType="String" required="False" visible="True" readonly="True" encrypted="False" isChanged="N" value="" />
+    <Property key="LastPublishedDate" controlType="String" valueType="System.String" formatType="String_DateTime" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+    <Property key="LastPublishedBy" controlType="String" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+  </Properties>
+  <LinkItems />
+  <Variables />
+  <Steps>
+    <Step id="S374ca819515e41cdbea1ee97b4931b13" ver="311240315" createVer="311231130" type="Flow" name="ExecuteScript" dpName="ExecuteScript" dpValue="" dpValue2="" dpImage="" tag="" depth="1" stmttype="Normal" enabled="True" mainSet="0">
+      <Properties id="a3220701-ab5b-4377-b41b-6b8bbf9ab238" type="Flow">
+        <Property type="Flow" key="Options_OnError" controlType="PropertyItemEventHandlerView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+        <Property type="Flow" key="Key_Description" controlType="PropertyItemTextEditorView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+        <Property type="Flow" key="Conditions_Title" controlType="String" valueType="System.String" formatType="String" required="True" visible="True" readonly="False" encrypted="False" isChanged="N" value="''" />
+        <Property type="Flow" key="Key_Script" controlType="PropertyItemTextEditorView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="this.jsonData = JSON.stringify(Global.resultCrawl);" />
+      </Properties>
+      <RelatedSteps />
+      <Script><![CDATA[this.jsonData = JSON.stringify(Global.resultCrawl);]]></Script>
+    </Step>
+    <Step id="S4faecf121f014f5b82506078bbba787a" ver="311240315" createVer="311240219" type="Empty" name="RemoveDuplicates" dpName="기사중복제거" dpValue="Global.New" dpValue2="" dpImage="" tag="" depth="1" stmttype="Normal" enabled="True" mainSet="0">
+      <Properties id="6c2450ff-f500-4c42-9e31-26802f1c7ad7" type="Empty">
+        <Property type="Empty" key="Options_OnError" controlType="PropertyItemEventHandlerView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+        <Property type="Empty" key="Key_Description" controlType="PropertyItemTextEditorView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+        <Property type="Empty" key="output_outpuVariab" controlType="OutputControlType" valueType="System.String" formatType="String" required="True" visible="True" readonly="False" encrypted="False" isChanged="N" value="Global.New" />
+        <Property type="Empty" key="Array1DTest_TestOF1" controlType="String" valueType="System.String" formatType="String_Json" required="True" visible="True" readonly="False" encrypted="False" isChanged="N" value="this.jsonData" />
+      </Properties>
+      <RelatedSteps />
+      <Script><![CDATA[Global.New = ActivityWorker.Play('Empty', 'RemoveDuplicates', this.activitylibraryitem_info_2);]]></Script>
+    </Step>
+  </Steps>
+  <JScript><![CDATA[function T_중복제거() {
+
+    this.RPAGOTOENABLE = false;
+    this.GotoStepRetryCntMap = {};
+    this.GotoBlockMap = {};
+    this.GotoReverseBlockMap = {};
+    this.GotoStepBlockTypeMap = {};
+
+
+    this.run = function() {
+
+        //------------------------------------------------
+        STEP('S374ca819515e41cdbea1ee97b4931b13', '[1] ExecuteScript');
+        this.jsonData = JSON.stringify(Global.resultCrawl);
+
+        //------------------------------------------------
+        STEP('S4faecf121f014f5b82506078bbba787a', '[2] 기사중복제거');
+        Global.New = ActivityWorker.Play('Empty', 'RemoveDuplicates', this.activitylibraryitem_info_2);
+
+
+    }
+
+    this.execute = function() {
+        var result = null;
+        result = this.run()
+        if (result != null)
+            return result;
+    }
+}
+]]></JScript>
+  <Diagram version="1.300" nodesize="Normal">
+    <StepNodes>
+      <StepNode step_id="S374ca819515e41cdbea1ee97b4931b13" group_name="653164b8-40fe-47f4-8cbb-0d127b0b7ac3_기사중복" folded="False" color="" />
+      <StepNode step_id="S4faecf121f014f5b82506078bbba787a" group_name="653164b8-40fe-47f4-8cbb-0d127b0b7ac3_기사중복" folded="False" color="" />
+    </StepNodes>
+  </Diagram>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>uMvB+tdYeVimOHlpik9F9qPMX58=</DigestValue></Reference></SignedInfo><SignatureValue>pKGCrti8xN5L7rbX/fh2CaI40MhunqtA2P9CPDrV2xrQZjYmGCKSWNChEzF6Ct9p719J1x6ZN3nAYMIbdkB1QMs3uyZIa+app2EmoT+nxh1QUEEhs/Ltln2La0aqWo3xMr7KIQfw5ZgUpEGX5lic7nEEWUdXCW3VtAFAi1ruajEdv4/Wgv1LqQMDNBbQ0+5QX3yyxs6hrihP7Mo5VKjUG4XOvgHI/n7sxxBNrCZIlaudTmhwPAFxVuwD9CoTBORrwPHu9JYiEfhDkyVUkGRijG61q/eVLHr7NQ9ZBw//iZeThu/puEyZQCKoJmnJ3xiiFIITVNdvKotXLRJO3xpDzg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=DESIGNER-00039, O=192.168.0.50, OU=IPA_DESIGNER, L="", S="", C=""</X509SubjectName></X509Data></KeyInfo></Signature></Process>

@@ -1,0 +1,265 @@
+<Process id="e4ead40a-6a74-4a13-860b-07b18b38fe87" type="task" workType="foreground" name="T_html형식변환" version="1.0" designerVersion="3.1.124.00322" lastPublishedServer="192.168.0.50.tenant_1" readonly="false" isValid="true" DesignedBy="Designer" Template="" StepCount="4" Orientation="horizontal">
+  <Properties>
+    <Property key="Description" controlType="PropertyItemTextEditorView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" enabled="True" />
+    <Property key="onBefore" controlType="PropertyItemEventHandlerView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" enabled="True" />
+    <Property key="onAfter" controlType="PropertyItemEventHandlerView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" enabled="True" />
+    <Property key="onError" controlType="PropertyItemEventHandlerView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" enabled="True" />
+    <Property key="Timeout" controlType="Int32" valueType="System.Int32" formatType="Integer" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="0" />
+    <Property key="RunningTime" controlType="Int32" valueType="System.Int32" formatType="Integer" required="False" visible="True" readonly="True" encrypted="False" isChanged="N" value="9" />
+    <Property key="Os" controlType="String" valueType="System.String" formatType="String" required="False" visible="True" readonly="True" encrypted="False" isChanged="N" value="Microsoft Windows 11 Pro64비트" />
+    <Property key="Resolution" controlType="String" valueType="System.String" formatType="String_Size" required="False" visible="True" readonly="True" encrypted="False" isChanged="N" value="3840x1080" />
+    <Property key="CreatedDate" controlType="String" valueType="System.String" formatType="String_DateTime" required="False" visible="True" readonly="True" encrypted="False" isChanged="N" value="2024-02-01 11:46:13" />
+    <Property key="CreatedBy" controlType="String" valueType="System.String" formatType="String" required="False" visible="True" readonly="True" encrypted="False" isChanged="N" value="eunsu9991" />
+    <Property key="LastModifiedDate" controlType="String" valueType="System.String" formatType="String_DateTime" required="False" visible="True" readonly="True" encrypted="False" isChanged="N" value="2024-09-03 13:39:56" />
+    <Property key="LastModifiedBy" controlType="String" valueType="System.String" formatType="String" required="False" visible="True" readonly="True" encrypted="False" isChanged="N" value="" />
+    <Property key="LastPublishedDate" controlType="String" valueType="System.String" formatType="String_DateTime" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="2024-04-17 16:54:57" />
+    <Property key="LastPublishedBy" controlType="String" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="eunsu9991" />
+  </Properties>
+  <LinkItems />
+  <Variables>
+    <Variable name="resultObject" scope="Normal" valueType="Any" formatType="Any" initValue="" desc="Json 형태 결과값 Object 변환" colorValue="#FFF7C04A" showMarker="False" />
+    <Variable name="htmlFinal" scope="Output" valueType="Any" formatType="Any" initValue="" desc="" colorValue="#FF9E4784" showMarker="False" />
+    <Variable name="htmlBody" scope="Normal" valueType="Any" formatType="Any" initValue="&quot;&quot;" desc="" colorValue="#FFF7DB6A" showMarker="False" />
+    <Variable name="htmlFoot" scope="Normal" valueType="Any" formatType="Any" initValue="" desc="" colorValue="#FF617143" showMarker="False" />
+    <Variable name="htmlHead" scope="Normal" valueType="Any" formatType="Any" initValue="" desc="" colorValue="#FF98DFD6" showMarker="False" />
+  </Variables>
+  <Steps>
+    <Step id="S54a4e30d2d364fd6aead3c86b48ea1c4" ver="311240315" createVer="310230724" type="Flow" name="CustomLibrary" dpName="Json_ToJsonObject" dpValue="this.resultObject" dpValue2="" dpImage="" tag="" depth="1" stmttype="Normal" enabled="True" mainSet="0">
+      <Properties id="a62a8d63-1be9-4867-ad3d-c8e9f2d71716" type="Flow">
+        <Property type="Flow" key="Options_OnError" controlType="PropertyItemEventHandlerView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+        <Property type="Flow" key="Key_Description" controlType="PropertyItemTextEditorView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+        <Property type="Flow" key="Conditions_LibraryScope" controlType="String" valueType="System.String" formatType="String" required="False" visible="False" readonly="False" encrypted="False" isChanged="N" value="Global" />
+        <Property type="Flow" key="Conditions_LibraryNamespace" controlType="String" valueType="System.String" formatType="String" required="False" visible="False" readonly="False" encrypted="False" isChanged="N" value="DataConverter" />
+        <Property type="Flow" key="Conditions_LibraryName" controlType="String" valueType="System.String" formatType="String" required="False" visible="False" readonly="True" encrypted="False" isChanged="N" value="Json_ToJsonObject" />
+        <Property type="Flow" key="Conditions_LibraryType" controlType="String" valueType="System.String" formatType="String" required="False" visible="False" readonly="True" encrypted="False" isChanged="N" value="DotNetDll" />
+        <Property type="Flow" key="Conditions_Result" controlType="OutputControlType" valueType="System.Object" formatType="Variable" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="this.resultObject" />
+        <Property type="Flow" key="Options_Instance" controlType="InputControlType" valueType="System.Object" formatType="Variable" required="False" visible="False" readonly="False" encrypted="False" isChanged="N" value="" />
+        <Property type="Flow" key="Arguments_data" controlType="String" valueType="System.String" formatType="String" required="True" visible="True" readonly="False" encrypted="False" isChanged="N" value="Global.New" order="1" />
+        <Property type="Flow" key="Conditions_TargetAssembly" controlType="String" valueType="System.String" formatType="String" required="False" visible="False" readonly="True" encrypted="False" isChanged="N" value="IPA.Custom.ExtendLibrary.dll" />
+        <Property type="Flow" key="Conditions_TargetClass" controlType="String" valueType="System.String" formatType="String" required="False" visible="False" readonly="True" encrypted="False" isChanged="N" value="RPAGO.Custom.ExtendLibrary.DataConverter_Json" />
+        <Property type="Flow" key="Conditions_TargetMethod" controlType="String" valueType="System.String" formatType="String" required="False" visible="False" readonly="True" encrypted="False" isChanged="N" value="System.Object ToJsonObject(System.Object)" />
+        <Property type="Flow" key="Conditions_ExternLibrary" controlType="String" valueType="System.String" formatType="String" required="False" visible="False" readonly="False" encrypted="False" isChanged="N" value="IPA.Custom.ExtendLibrary.dll" />
+        <Property type="Flow" key="Conditions_ExternLibraryModule" controlType="String" valueType="System.String" formatType="String" required="False" visible="False" readonly="False" encrypted="False" isChanged="N" value="RPAGO.Custom.ExtendLibrary.DataConverter_Json" />
+        <Property type="Flow" key="Conditions_ExternLibraryMethodFullName" controlType="String" valueType="System.String" formatType="String" required="False" visible="False" readonly="False" encrypted="False" isChanged="N" value="System.Object ToJsonObject(System.Object)" />
+        <Property type="Flow" key="Conditions_TargetMethodType" controlType="String" valueType="System.String" formatType="String" required="False" visible="False" readonly="False" encrypted="False" isChanged="N" value="Static_Method" />
+      </Properties>
+      <RelatedSteps />
+      <Script><![CDATA[this.resultObject = Script.DataConverter.Json_ToJsonObject(null, Global.New);]]></Script>
+    </Step>
+    <Step id="S71fd3b1969534e72b79568afb2d32ea4" ver="311240315" createVer="310230724" type="Flow" name="Assign" dpName="Assign" dpValue="this.htmlHead=`&lt;!DOCTYPE html&gt;&#xD;&#xA;&lt;html lang=&quot;en&quot;&gt;&#xD;&#xA;&lt;head&gt;&#xD;&#xA;    &lt;meta charset=&quot;UTF-8&quot;&gt;&#xD;&#xA;    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;&#xD;&#xA;    &lt;title&gt;뉴스 알리미&lt;/title&gt;&#xD;&#xA;&lt;/head&gt;&#xD;&#xA;&lt;body&gt;`" dpValue2="" dpImage="" tag="" depth="1" stmttype="Normal" enabled="True" mainSet="0">
+      <Properties id="76405762-d10a-45a1-bd95-3c82ffb596ad" type="Flow">
+        <Property type="Flow" key="Options_OnError" controlType="PropertyItemEventHandlerView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+        <Property type="Flow" key="Key_Description" controlType="PropertyItemTextEditorView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+        <Property type="Flow" key="Conditions_Variable" controlType="OutputControlType" valueType="System.Object" formatType="Variable" required="True" visible="True" readonly="False" encrypted="False" isChanged="N" value="this.htmlHead" />
+        <Property type="Flow" key="Conditions_Value" controlType="PropertyItemTextView" valueType="System.String" formatType="String" required="True" visible="True" readonly="False" encrypted="False" isChanged="N" value="`&lt;!DOCTYPE html&gt;&#xD;&#xA;&lt;html lang=&quot;en&quot;&gt;&#xD;&#xA;&lt;head&gt;&#xD;&#xA;    &lt;meta charset=&quot;UTF-8&quot;&gt;&#xD;&#xA;    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;&#xD;&#xA;    &lt;title&gt;뉴스 알리미&lt;/title&gt;&#xD;&#xA;&lt;/head&gt;&#xD;&#xA;&lt;body&gt;`" />
+      </Properties>
+      <RelatedSteps />
+      <Script><![CDATA[this.htmlHead = `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뉴스 알리미</title>
+</head>
+<body>`;]]></Script>
+    </Step>
+    <Step id="S570003467f0d4557af1b649763d158af" ver="311240315" createVer="310230724" type="Flow" name="Assign" dpName="Assign" dpValue="this.htmlFoot=`&lt;/body&gt;&#xD;&#xA;&lt;/html&gt;`" dpValue2="" dpImage="" tag="" depth="1" stmttype="Normal" enabled="True" mainSet="0">
+      <Properties id="11f07ac7-725e-4fa9-b7ad-895b5d5c7e9e" type="Flow">
+        <Property type="Flow" key="Options_OnError" controlType="PropertyItemEventHandlerView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+        <Property type="Flow" key="Key_Description" controlType="PropertyItemTextEditorView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+        <Property type="Flow" key="Conditions_Variable" controlType="OutputControlType" valueType="System.Object" formatType="Variable" required="True" visible="True" readonly="False" encrypted="False" isChanged="N" value="this.htmlFoot" />
+        <Property type="Flow" key="Conditions_Value" controlType="PropertyItemTextView" valueType="System.String" formatType="String" required="True" visible="True" readonly="False" encrypted="False" isChanged="N" value="`&lt;/body&gt;&#xD;&#xA;&lt;/html&gt;`" />
+      </Properties>
+      <RelatedSteps />
+      <Script><![CDATA[this.htmlFoot = `</body>
+</html>`;]]></Script>
+    </Step>
+    <Step id="S2175b9c75a2a4a6faa2b04dcc81f0d0d" ver="311240315" createVer="310230724" type="Flow" name="ExecuteScript" dpName="ExecuteScript" dpValue="" dpValue2="" dpImage="" tag="" depth="1" stmttype="Normal" enabled="True" mainSet="0">
+      <Properties id="3aafa1b9-541c-44d9-9dbe-ec58b9688a87" type="Flow">
+        <Property type="Flow" key="Options_OnError" controlType="PropertyItemEventHandlerView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+        <Property type="Flow" key="Key_Description" controlType="PropertyItemTextEditorView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+        <Property type="Flow" key="Conditions_Title" controlType="String" valueType="System.String" formatType="String" required="True" visible="True" readonly="False" encrypted="False" isChanged="N" value="html 형식" />
+        <Property type="Flow" key="Key_Script" controlType="PropertyItemTextEditorView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="try {&#xD;&#xA;    // 아이콘 모양&#xD;&#xA;    var searchEngineIcons = {&#xD;&#xA;        &quot;naver&quot;: &quot;https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQb-aiB9jbgLyrCyqd23-Mbp4ebdqLauh3a_TIfsFCaZA&amp;s&quot;,&#xD;&#xA;        &quot;google&quot;: &quot;https://cdn-icons-png.flaticon.com/512/2991/2991148.png&quot;&#xD;&#xA;    };&#xD;&#xA;    &#xD;&#xA;    var keywords = Object.keys(this.resultObject); // 키워드들 []&#xD;&#xA;    &#xD;&#xA;    // 뉴스알리미 summary 영역&#xD;&#xA;    this.htmlBody += `&lt;div style=&quot;padding: 10px; margin-bottom: 15px; background-color: beige; border-radius: 10px;&quot;&gt;&lt;h3&gt;뉴스알리미 summary&lt;/h3&gt;&lt;hr&gt;&lt;table&gt;`;&#xD;&#xA;    for (var i = 0; i &lt; keywords.length; i++) {       &#xD;&#xA;        this.htmlBody += `&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;#` + keywords[i] + `&quot;&gt;` + keywords[i] + `&lt;/a&gt;&lt;/td&gt;`;&#xD;&#xA;        this.htmlBody += `&lt;td style=&quot;padding: 5px 0px 5px 30px; color: darkgray;&quot;&gt;` + this.resultObject[keywords[i]].length + `개&lt;/td&gt;&lt;/tr&gt;`&#xD;&#xA;    }&#xD;&#xA;    &#xD;&#xA;    this.htmlBody += `&lt;/table&gt;&lt;/div&gt;`;&#xD;&#xA;    &#xD;&#xA;    &#xD;&#xA;    for (var i = 0; i &lt; keywords.length; i++) { // 키워드 for&#xD;&#xA;    &#xD;&#xA;        this.htmlBody += `&lt;div style=&quot;padding: 10px; background-color: lavender;&quot;&gt;&lt;a id=&quot;` + keywords[i] + `&quot;&gt;&lt;h2&gt;` + keywords[i] + `&lt;/h2&gt;&lt;hr&gt;&lt;/a&gt;`; // 키워드들&#xD;&#xA;        &#xD;&#xA;        // 에러 msg면 true 아니면 false&#xD;&#xA;        if (this.resultObject[keywords[i]] == 0) {&#xD;&#xA;            this.htmlBody += `&lt;div style=&quot;background-color: white; padding: 10px 15px 0px 15px; border-radius: 5px; box-shadow: 5px 5px 5px gainsboro;&quot;&gt;&lt;p&gt;` + Global.errorMsg + `&lt;/p&gt;&lt;/div&gt;&lt;br&gt;`;&#xD;&#xA;        } else {&#xD;&#xA;            // 기사 넣기&#xD;&#xA;            for (var j = 0; j &lt; this.resultObject[keywords[i]].length; j++) { // 기사 for&#xD;&#xA;                var article = this.resultObject[keywords[i]][j];&#xD;&#xA;                &#xD;&#xA;                // 신문사, 제목, url, 내용&#xD;&#xA;                this.htmlBody += `&lt;div style=&quot;background-color: white; padding: 10px 15px 0px 15px; border-radius: 5px; box-shadow: 5px 5px 5px gainsboro;&quot;&gt;&#xD;&#xA;                    &lt;h3&gt;&lt;a href=&quot;` + article.Url + `&quot; target=&quot;_blank&quot;&gt;` + article.Title + `&lt;/a&gt;&lt;/h3&gt;&#xD;&#xA;                    &lt;p style=&quot;color:green&quot;&gt;&lt;b&gt;` + article.Source + `&lt;/b&gt;&lt;/p&gt;&#xD;&#xA;                    &lt;p&gt;` + article.Content + `&lt;/p&gt;`;&#xD;&#xA;                    &#xD;&#xA;                // img 넣기    &#xD;&#xA;                if (article.Hompage == &quot;네이버&quot;) {&#xD;&#xA;                    this.htmlBody += `&lt;img src=&quot;` + searchEngineIcons['naver'] + `&quot; style=&quot;width: 20px; height: 20px;&quot;&gt;`;&#xD;&#xA;                } else if (article.Hompage == &quot;구글&quot;) {&#xD;&#xA;                    this.htmlBody += `&lt;img src=&quot;` + searchEngineIcons['google'] + `&quot; style=&quot;width: 20px; height: 20px;&quot;&gt;`;&#xD;&#xA;                } else if (article.Hompage == &quot;중복&quot;) {&#xD;&#xA;                    this.htmlBody += `&lt;img src=&quot;` + searchEngineIcons['naver'] + `&quot; style=&quot;width: 20px; height: 20px;&quot;&gt;`;&#xD;&#xA;                    this.htmlBody += `&lt;img src=&quot;` + searchEngineIcons['google'] + `&quot; style=&quot;width: 20px; height: 20px;&quot;&gt;`;&#xD;&#xA;                }&#xD;&#xA;                &#xD;&#xA;                this.htmlBody += `&lt;br&gt;&lt;/div&gt;&lt;br&gt;`;&#xD;&#xA;            }&#xD;&#xA;        }&#xD;&#xA;        &#xD;&#xA;        this.htmlBody += `&lt;/div&gt;&lt;br&gt;`;&#xD;&#xA;    }&#xD;&#xA;    &#xD;&#xA;    this.htmlFinal = this.htmlHead + this.htmlBody + this.htmlFoot;&#xD;&#xA;    &#xD;&#xA;} catch(e) {&#xD;&#xA;    Error(e);&#xD;&#xA;}" />
+      </Properties>
+      <RelatedSteps />
+      <Script><![CDATA[try {
+    // 아이콘 모양
+    var searchEngineIcons = {
+        "naver": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQb-aiB9jbgLyrCyqd23-Mbp4ebdqLauh3a_TIfsFCaZA&s",
+        "google": "https://cdn-icons-png.flaticon.com/512/2991/2991148.png"
+    };
+    
+    var keywords = Object.keys(this.resultObject); // 키워드들 []
+    
+    // 뉴스알리미 summary 영역
+    this.htmlBody += `<div style="padding: 10px; margin-bottom: 15px; background-color: beige; border-radius: 10px;"><h3>뉴스알리미 summary</h3><hr><table>`;
+    for (var i = 0; i < keywords.length; i++) {       
+        this.htmlBody += `<tr><td><a href="#` + keywords[i] + `">` + keywords[i] + `</a></td>`;
+        this.htmlBody += `<td style="padding: 5px 0px 5px 30px; color: darkgray;">` + this.resultObject[keywords[i]].length + `개</td></tr>`
+    }
+    
+    this.htmlBody += `</table></div>`;
+    
+    
+    for (var i = 0; i < keywords.length; i++) { // 키워드 for
+    
+        this.htmlBody += `<div style="padding: 10px; background-color: lavender;"><a id="` + keywords[i] + `"><h2>` + keywords[i] + `</h2><hr></a>`; // 키워드들
+        
+        // 에러 msg면 true 아니면 false
+        if (this.resultObject[keywords[i]] == 0) {
+            this.htmlBody += `<div style="background-color: white; padding: 10px 15px 0px 15px; border-radius: 5px; box-shadow: 5px 5px 5px gainsboro;"><p>` + Global.errorMsg + `</p></div><br>`;
+        } else {
+            // 기사 넣기
+            for (var j = 0; j < this.resultObject[keywords[i]].length; j++) { // 기사 for
+                var article = this.resultObject[keywords[i]][j];
+                
+                // 신문사, 제목, url, 내용
+                this.htmlBody += `<div style="background-color: white; padding: 10px 15px 0px 15px; border-radius: 5px; box-shadow: 5px 5px 5px gainsboro;">
+                    <h3><a href="` + article.Url + `" target="_blank">` + article.Title + `</a></h3>
+                    <p style="color:green"><b>` + article.Source + `</b></p>
+                    <p>` + article.Content + `</p>`;
+                    
+                // img 넣기    
+                if (article.Hompage == "네이버") {
+                    this.htmlBody += `<img src="` + searchEngineIcons['naver'] + `" style="width: 20px; height: 20px;">`;
+                } else if (article.Hompage == "구글") {
+                    this.htmlBody += `<img src="` + searchEngineIcons['google'] + `" style="width: 20px; height: 20px;">`;
+                } else if (article.Hompage == "중복") {
+                    this.htmlBody += `<img src="` + searchEngineIcons['naver'] + `" style="width: 20px; height: 20px;">`;
+                    this.htmlBody += `<img src="` + searchEngineIcons['google'] + `" style="width: 20px; height: 20px;">`;
+                }
+                
+                this.htmlBody += `<br></div><br>`;
+            }
+        }
+        
+        this.htmlBody += `</div><br>`;
+    }
+    
+    this.htmlFinal = this.htmlHead + this.htmlBody + this.htmlFoot;
+    
+} catch(e) {
+    Error(e);
+}]]></Script>
+    </Step>
+  </Steps>
+  <JScript><![CDATA[function T_html형식변환() {
+
+    this.resultObject;
+    this.htmlFinal;
+    this.htmlBody = "";
+    this.htmlFoot;
+    this.htmlHead;
+
+    this.RPAGOTOENABLE = false;
+    this.GotoStepRetryCntMap = {};
+    this.GotoBlockMap = {};
+    this.GotoReverseBlockMap = {};
+    this.GotoStepBlockTypeMap = {};
+
+
+    this.run = function() {
+
+        //------------------------------------------------
+        STEP('S54a4e30d2d364fd6aead3c86b48ea1c4', '[1] Json_ToJsonObject');
+        this.resultObject = Script.DataConverter.Json_ToJsonObject(null, Global.New);
+
+        //------------------------------------------------
+        STEP('S71fd3b1969534e72b79568afb2d32ea4', '[2] Assign');
+        this.htmlHead = `<!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>뉴스 알리미</title>
+        </head>
+        <body>`;
+
+        //------------------------------------------------
+        STEP('S570003467f0d4557af1b649763d158af', '[3] Assign');
+        this.htmlFoot = `</body>
+        </html>`;
+
+        //------------------------------------------------
+        STEP('S2175b9c75a2a4a6faa2b04dcc81f0d0d', '[4] ExecuteScript');
+        try {
+            // 아이콘 모양
+            var searchEngineIcons = {
+                "naver": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQb-aiB9jbgLyrCyqd23-Mbp4ebdqLauh3a_TIfsFCaZA&s",
+                "google": "https://cdn-icons-png.flaticon.com/512/2991/2991148.png"
+            };
+            
+            var keywords = Object.keys(this.resultObject); // 키워드들 []
+            
+            // 뉴스알리미 summary 영역
+            this.htmlBody += `<div style="padding: 10px; margin-bottom: 15px; background-color: beige; border-radius: 10px;"><h3>뉴스알리미 summary</h3><hr><table>`;
+            for (var i = 0; i < keywords.length; i++) {       
+                this.htmlBody += `<tr><td><a href="#` + keywords[i] + `">` + keywords[i] + `</a></td>`;
+                this.htmlBody += `<td style="padding: 5px 0px 5px 30px; color: darkgray;">` + this.resultObject[keywords[i]].length + `개</td></tr>`
+            }
+            
+            this.htmlBody += `</table></div>`;
+            
+            
+            for (var i = 0; i < keywords.length; i++) { // 키워드 for
+            
+                this.htmlBody += `<div style="padding: 10px; background-color: lavender;"><a id="` + keywords[i] + `"><h2>` + keywords[i] + `</h2><hr></a>`; // 키워드들
+                
+                // 에러 msg면 true 아니면 false
+                if (this.resultObject[keywords[i]] == 0) {
+                    this.htmlBody += `<div style="background-color: white; padding: 10px 15px 0px 15px; border-radius: 5px; box-shadow: 5px 5px 5px gainsboro;"><p>` + Global.errorMsg + `</p></div><br>`;
+                } else {
+                    // 기사 넣기
+                    for (var j = 0; j < this.resultObject[keywords[i]].length; j++) { // 기사 for
+                        var article = this.resultObject[keywords[i]][j];
+                        
+                        // 신문사, 제목, url, 내용
+                        this.htmlBody += `<div style="background-color: white; padding: 10px 15px 0px 15px; border-radius: 5px; box-shadow: 5px 5px 5px gainsboro;">
+                            <h3><a href="` + article.Url + `" target="_blank">` + article.Title + `</a></h3>
+                            <p style="color:green"><b>` + article.Source + `</b></p>
+                            <p>` + article.Content + `</p>`;
+                            
+                        // img 넣기    
+                        if (article.Hompage == "네이버") {
+                            this.htmlBody += `<img src="` + searchEngineIcons['naver'] + `" style="width: 20px; height: 20px;">`;
+                        } else if (article.Hompage == "구글") {
+                            this.htmlBody += `<img src="` + searchEngineIcons['google'] + `" style="width: 20px; height: 20px;">`;
+                        } else if (article.Hompage == "중복") {
+                            this.htmlBody += `<img src="` + searchEngineIcons['naver'] + `" style="width: 20px; height: 20px;">`;
+                            this.htmlBody += `<img src="` + searchEngineIcons['google'] + `" style="width: 20px; height: 20px;">`;
+                        }
+                        
+                        this.htmlBody += `<br></div><br>`;
+                    }
+                }
+                
+                this.htmlBody += `</div><br>`;
+            }
+            
+            this.htmlFinal = this.htmlHead + this.htmlBody + this.htmlFoot;
+            
+        } catch(e) {
+            Error(e);
+        }
+
+
+    }
+
+    this.execute = function() {
+        var result = null;
+        result = this.run()
+        if (result != null)
+            return result;
+        return {'htmlFinal':this.htmlFinal};
+    }
+}
+]]></JScript>
+  <Diagram version="1.300" nodesize="Normal">
+    <StepNodes>
+      <StepNode step_id="S54a4e30d2d364fd6aead3c86b48ea1c4" group_name="5b3da18b-4202-4d96-9ea7-c49bfc815b03_중복제거 형태" folded="False" color="" />
+      <StepNode step_id="S71fd3b1969534e72b79568afb2d32ea4" group_name="259c538c-efe0-4b69-980b-6cb6f4f65084_HTML Header/Footer 지정" folded="False" color="" />
+      <StepNode step_id="S570003467f0d4557af1b649763d158af" group_name="259c538c-efe0-4b69-980b-6cb6f4f65084_HTML Header/Footer 지정" folded="False" color="" />
+      <StepNode step_id="S2175b9c75a2a4a6faa2b04dcc81f0d0d" group_name="8dd1f7ca-12c0-4c22-bdd9-abfd75d2ca5e_크롤링 데이터 html 형식 전환" folded="False" color="" />
+    </StepNodes>
+  </Diagram>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>0upp4yH06IHw1+IqWJ4j9avfUZA=</DigestValue></Reference></SignedInfo><SignatureValue>sHMBoCVKL7Nx9N+MtznUkb45nVq5Auz9tTr3J79xDh3QPVi25hZQhIN2SdDYFjePC/f3v+flxUbYQ6tTdhfPY68ILdPi9LY9jnCvybpupKApEW7yADrp03Bz4p89g1XOsPj6Y5crfLK22NGJYNF26mCQZnChpoJ0fUPKirV1XvojHEuMl1oHjY32ZvjjTIJF2ghoj/QhwcIXsYo89ckGJZQVM1J+y51Bac/BlPAprG1h3BA5i4TzXxNxwA+VOD7Gb6a3Op6YW7QFZegS65UHATSogKZX0SmGKs6YeTK0yDelq09lZ9/nCkALgRjjP+rTYH+EujrZH+tMHtBbalPYgg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=DESIGNER-00039, O=192.168.0.50, OU=IPA_DESIGNER, L="", S="", C=""</X509SubjectName></X509Data></KeyInfo></Signature></Process>

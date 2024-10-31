@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Result id="0630864e-a847-4cd0-9c53-a73c38526b2d" name="P_뉴스알리미" result="Pass" detail="{}" start="2024-09-03T04:42:47.834" end="2024-09-03T04:42:49.572" jobId="Designer_20240903_134236_413">
+  <Step id="Sb1c451d54443402b8dccbbaf481589ed" taskName="P_뉴스알리미" type="Win" name="CloseAll" displayName="CloseAll" callDepth="1" depth="1" num="1" result="Pass" start="2024-09-03T04:42:47.914" end="2024-09-03T04:42:49.566" displayTime="1.7s">
+    <Variables />
+    <Properties setIndex="0">
+      <Property value="" runtimeType="String" key="Options_OnError" displayKey="On Error" visible="true" required="false" />
+      <Property value="" runtimeType="String" key="Key_Description" displayKey="Description" visible="true" required="false" />
+      <Property value="&lt;undefined&gt;" runtimeType="Undefined" key="Application_ProcessName" displayKey="Application" visible="true" required="true" />
+      <Property value="true" runtimeType="Boolean" key="Options_Force" displayKey="Force" visible="true" required="false" />
+    </Properties>
+  </Step>
+  <JobInfo>
+    <Info name="Bot Version" value="3.1.124.00322" />
+    <Info name="Resolution" value="1920 x 1080" />
+    <Info name="Language" value="한국어 (대한민국)" />
+    <Info name="BotID" value="DESIGNER-00039" />
+  </JobInfo>
+</Result>

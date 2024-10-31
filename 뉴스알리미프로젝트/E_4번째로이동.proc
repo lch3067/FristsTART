@@ -1,0 +1,71 @@
+<Process id="243a7d42-465e-4b5b-a2fa-082f80c76081" type="event" workType="foreground" name="E_4번째로이동" version="1.0" designerVersion="3.1.124.00322" readonly="false" isValid="true" DesignedBy="Designer" Template="" StepCount="1" Orientation="horizontal">
+  <Properties>
+    <Property key="Description" controlType="PropertyItemTextEditorView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" enabled="True" />
+    <Property key="Timeout" controlType="Int32" valueType="System.Int32" formatType="Integer" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="0" />
+    <Property key="RunningTime" controlType="Int32" valueType="System.Int32" formatType="Integer" required="False" visible="True" readonly="True" encrypted="False" isChanged="N" value="0" />
+    <Property key="Os" controlType="String" valueType="System.String" formatType="String" required="False" visible="True" readonly="True" encrypted="False" isChanged="N" value="Microsoft Windows 11 Pro64비트" />
+    <Property key="Resolution" controlType="String" valueType="System.String" formatType="String_Size" required="False" visible="True" readonly="True" encrypted="False" isChanged="N" value="4320x1350" />
+    <Property key="CreatedDate" controlType="String" valueType="System.String" formatType="String_DateTime" required="False" visible="True" readonly="True" encrypted="False" isChanged="N" value="2024-03-13 11:49:12" />
+    <Property key="CreatedBy" controlType="String" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="eunsu9991" />
+    <Property key="LastModifiedDate" controlType="String" valueType="System.String" formatType="String_DateTime" required="False" visible="True" readonly="True" encrypted="False" isChanged="N" value="2024-09-03 13:39:56" />
+    <Property key="LastModifiedBy" controlType="String" valueType="System.String" formatType="String" required="False" visible="True" readonly="True" encrypted="False" isChanged="N" value="" />
+    <Property key="LastPublishedDate" controlType="String" valueType="System.String" formatType="String_DateTime" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+    <Property key="LastPublishedBy" controlType="String" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+  </Properties>
+  <LinkItems />
+  <Variables>
+    <Variable name="sender" scope="Input" valueType="Any" formatType="Any" initValue="this" desc="Task Object" colorValue="#FF539165" showMarker="False" />
+    <Variable name="args" scope="Input" valueType="Any" formatType="Any" initValue="{message:'error message'}" desc="Exception Object" colorValue="#FF62B6B7" showMarker="False" />
+    <Variable name="senderName" scope="Normal" valueType="Any" formatType="Any" initValue="this.sender.constructor.name" desc="Task Name" colorValue="#FF377D71" showMarker="False" />
+    <Variable name="errorMessage" scope="Normal" valueType="Any" formatType="Any" initValue="Bot.GetProgressInfo(this.senderName) + '\n' + this.args.message" desc="Default Message Format" colorValue="#FF9E4784" showMarker="False" />
+  </Variables>
+  <Steps>
+    <Step id="S6e9264453d174a5a96be64c3347f743b" ver="311240315" createVer="311240219" type="Flow" name="RetryTask" dpName="RetryTask" dpValue="" dpValue2="" dpImage="" tag="" depth="1" stmttype="Normal" enabled="True" mainSet="0">
+      <Properties id="fd59b835-8aed-4fca-830c-d3e3ee11f708" type="Flow">
+        <Property type="Flow" key="Options_OnError" controlType="PropertyItemEventHandlerView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+        <Property type="Flow" key="Key_Description" controlType="PropertyItemTextEditorView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+        <Property type="Flow" key="Conditions_Result" controlType="OutputControlType" valueType="System.Object" formatType="Variable" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+        <Property type="Flow" key="Conditions_RetryCmd" controlType="PropertyItemDropDownView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="ErrorStep" valuelist="ErrorStep;StepNo" />
+        <Property type="Flow" key="Conditions_RetryArgs" controlType="String" valueType="System.String" formatType="String" required="True" visible="True" readonly="False" encrypted="False" isChanged="N" value="4" />
+      </Properties>
+      <RelatedSteps />
+      <Script><![CDATA[return RetryTask(this.sender.constructor.name, 'ErrorStep', 4);]]></Script>
+    </Step>
+  </Steps>
+  <JScript><![CDATA[function E_4번째로이동(args) {
+
+    this.sender = (typeof args != 'undefined') ? args.sender : this;
+    this.args = (typeof args != 'undefined') ? args.args : {message:'error message'};
+    this.senderName = this.sender.constructor.name;
+    this.errorMessage = Bot.GetProgressInfo(this.senderName) + '\n' + this.args.message;
+
+    this.RPAGOTOENABLE = false;
+    this.GotoStepRetryCntMap = {};
+    this.GotoBlockMap = {};
+    this.GotoReverseBlockMap = {};
+    this.GotoStepBlockTypeMap = {};
+
+
+    this.run = function() {
+
+        //------------------------------------------------
+        STEP('S6e9264453d174a5a96be64c3347f743b', '[1] RetryTask');
+        return RetryTask(this.sender.constructor.name, 'ErrorStep', 4);
+
+
+    }
+
+    this.execute = function() {
+        var result = null;
+        result = this.run()
+        if (result != null)
+            return result;
+    }
+}
+]]></JScript>
+  <Diagram version="1.300" nodesize="Normal">
+    <StepNodes>
+      <StepNode step_id="S6e9264453d174a5a96be64c3347f743b" group_name="7eb75a46-f4fc-41e0-831f-70feec43ce0b_Untitled" folded="False" color="" />
+    </StepNodes>
+  </Diagram>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>Sfx1P94zgkduWYVrbyAAQFMxsDU=</DigestValue></Reference></SignedInfo><SignatureValue>VWG5+9ZVhKtFE36rCFnRRbYiqJer2vaglqbwyyC9IyYcDw+FpCIiibpKVvlPG/zHqRKOOT81vTHYAk61s8kweXnS/gWC0mHv1q+YjYd2jz+nocBJB0D0pU8qrudctr1Eg/HoCzC5nMdJ3DNfruZei4Z/ZB83Sy1UFk19cfCJVDUP47npakdlmwXdfZ/LvA0NU/4t4H8QTv/lvGv6S92oHAuq4M6bBfu4CzxgTZtaH0AIzBAPSqRlxiUYgW9IvzHbtWzHgXV0X5MN6nCFFVTxkiqqmUSuyJ8vEXT38JhcUB1WtCKXhcXcsCx5iYj1GL7FPxpyh1p9ic3H4ocBN02blg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=DESIGNER-00039, O=192.168.0.50, OU=IPA_DESIGNER, L="", S="", C=""</X509SubjectName></X509Data></KeyInfo></Signature></Process>

@@ -1,0 +1,259 @@
+<Process id="9d3cb568-95fe-4f31-89c9-018bf9f747a7" type="task" workType="foreground" name="T_config에서_정보가져오기" version="1.0" designerVersion="3.1.124.00322" readonly="false" isValid="true" DesignedBy="Designer" Template="" StepCount="7" Orientation="horizontal">
+  <Properties>
+    <Property key="Description" controlType="PropertyItemTextEditorView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" enabled="True" />
+    <Property key="onBefore" controlType="PropertyItemEventHandlerView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" enabled="True" />
+    <Property key="onAfter" controlType="PropertyItemEventHandlerView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" enabled="True" />
+    <Property key="onError" controlType="PropertyItemEventHandlerView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" enabled="True" />
+    <Property key="Timeout" controlType="Int32" valueType="System.Int32" formatType="Integer" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="0" />
+    <Property key="RunningTime" controlType="Int32" valueType="System.Int32" formatType="Integer" required="False" visible="True" readonly="True" encrypted="False" isChanged="N" value="8" />
+    <Property key="Os" controlType="String" valueType="System.String" formatType="String" required="False" visible="True" readonly="True" encrypted="False" isChanged="N" value="Microsoft Windows 11 Pro64비트" />
+    <Property key="Resolution" controlType="String" valueType="System.String" formatType="String_Size" required="False" visible="True" readonly="True" encrypted="False" isChanged="N" value="3840x1080" />
+    <Property key="CreatedDate" controlType="String" valueType="System.String" formatType="String_DateTime" required="False" visible="True" readonly="True" encrypted="False" isChanged="N" value="2024-01-19 09:20:19" />
+    <Property key="CreatedBy" controlType="String" valueType="System.String" formatType="String" required="False" visible="True" readonly="True" encrypted="False" isChanged="N" value="eunsu9991" />
+    <Property key="LastModifiedDate" controlType="String" valueType="System.String" formatType="String_DateTime" required="False" visible="True" readonly="True" encrypted="False" isChanged="N" value="2024-09-03 13:39:56" />
+    <Property key="LastModifiedBy" controlType="String" valueType="System.String" formatType="String" required="False" visible="True" readonly="True" encrypted="False" isChanged="N" value="" />
+    <Property key="LastPublishedDate" controlType="String" valueType="System.String" formatType="String_DateTime" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+    <Property key="LastPublishedBy" controlType="String" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+  </Properties>
+  <LinkItems />
+  <Variables>
+    <Variable name="senderMail" scope="Output" valueType="Any" formatType="Any" initValue="" desc="발송 메일" colorValue="#FFAA77FF" showMarker="False" />
+    <Variable name="excelName" scope="Normal" valueType="Any" formatType="Any" initValue="'뉴스알리미_config.xlsx'" desc="config 엑셀명" colorValue="#FFCB1C8D" showMarker="False" />
+    <Variable name="recipientMail" scope="Output" valueType="Any" formatType="Any" initValue="" desc="수신 메일" colorValue="#FF00E7FF" showMarker="False" />
+    <Variable name="keyword" scope="Output" valueType="Any" formatType="Any" initValue="" desc="키워드(배열 or String)" colorValue="#FFFC2947" showMarker="False" />
+    <Variable name="searchE" scope="Output" valueType="Any" formatType="Any" initValue="" desc="검색엔진(배열 or String)" colorValue="#FFFE6244" showMarker="False" />
+  </Variables>
+  <Steps>
+    <Step id="S2ab173ede36247e58ecdd64fcfd287a5" ver="311240315" createVer="310230724" type="Excel" name="OpenExcel" dpName="OpenExcel" dpValue="Global.ResourcesDir + this.excelName" dpValue2="" dpImage="" tag="" depth="1" stmttype="Normal" enabled="True" mainSet="0">
+      <Properties id="b612dbcb-cb4d-44e6-8fe1-691afeb8697a" type="Excel">
+        <Property type="Excel" key="Options_OnError" controlType="PropertyItemEventHandlerView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+        <Property type="Excel" key="Key_Description" controlType="PropertyItemTextEditorView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+        <Property type="Excel" key="Output_OutputExcel" controlType="OutputControlType" valueType="System.Object" formatType="Variable" required="True" visible="True" readonly="False" encrypted="False" isChanged="N" value="RESULT" />
+        <Property type="Excel" key="File_Path" controlType="Excel" valueType="System.String" formatType="String_FilePath" required="True" visible="True" readonly="False" encrypted="False" isChanged="N" value="Global.ResourcesDir + this.excelName" order="11" />
+        <Property type="Excel" key="File_Invisible" controlType="Boolean" valueType="System.Boolean" formatType="Boolean" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="False" order="12" />
+        <Property type="Excel" key="File_ReadOnly" controlType="Boolean" valueType="System.Boolean" formatType="Boolean" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="False" order="16" />
+        <Property type="Excel" key="File_Maximize" controlType="Boolean" valueType="System.Boolean" formatType="Boolean" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="True" order="13" />
+        <Property type="Excel" key="File_ExecuteShell" controlType="Boolean" valueType="System.Boolean" formatType="Boolean" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="False" order="14" />
+        <Property type="Excel" key="File_Timeout" controlType="Int32" valueType="System.Int32" formatType="Integer" required="True" visible="False" readonly="False" encrypted="False" isChanged="N" value="60" order="15" />
+        <Property type="Excel" key="File_UsePassword" controlType="Boolean" valueType="System.Boolean" formatType="Boolean" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="False" order="17" />
+        <Property type="Excel" key="File_OpenPassword" controlType="PropertyItemPasswordView" valueType="System.String" formatType="String" required="False" visible="False" readonly="False" encrypted="False" isChanged="N" value="" order="18" />
+        <Property type="Excel" key="File_WritePassword" controlType="PropertyItemPasswordView" valueType="System.String" formatType="String" required="False" visible="False" readonly="False" encrypted="False" isChanged="N" value="" order="19" />
+        <Property type="Excel" key="File_TextDelimiter" controlType="PropertyItemDropDownView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="Comma(,)" valuelist="Comma(,);Colon(:);Semicolon(;;);Caret(^);Pipe(|);Tab(&#x9;);Space( );Ampersand(&amp;);Ampersat(@);Asterisk(*);Backslash(\);Dollar($);Dot(.);Equals(=);Exclamation(!);Hyphen(-);Percent(%);Plus(+);Question(?);Sharp(#);Slash(/);Tilde(~);Underscore(_)" order="20" />
+      </Properties>
+      <RelatedSteps />
+      <Script><![CDATA[RESULT = StepPlayer.Run('Excel.OpenExcel', this.openexcel_info_1);]]></Script>
+    </Step>
+    <Step id="S1c0c90349431425a93d1986a5945d543" ver="311240315" createVer="310230724" type="Excel" name="ReadString" dpName="ReadString" dpValue="C5" dpValue2="" dpImage="" tag="" depth="1" stmttype="Normal" enabled="True" mainSet="0">
+      <Properties id="2805ad4d-ca93-4b2e-8dac-a994e490310a" type="Excel">
+        <Property type="Excel" key="Options_OnError" controlType="PropertyItemEventHandlerView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+        <Property type="Excel" key="Key_Description" controlType="PropertyItemTextEditorView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="검색엔진" />
+        <Property type="Excel" key="Output_ReadData" controlType="OutputControlType" valueType="System.String" formatType="Variable" required="True" visible="True" readonly="False" encrypted="False" isChanged="N" value="this.searchE" />
+        <Property type="Excel" key="Input_InputExcel" controlType="InputControlType" valueType="System.Object" formatType="Variable" required="True" visible="True" readonly="False" encrypted="False" isChanged="N" value="ACTIVE_EXCEL" />
+        <Property type="Excel" key="Sheet_SheetName" controlType="String" valueType="System.String" formatType="String" required="True" visible="True" readonly="False" encrypted="False" isChanged="N" value="ACTIVE_SHEET" />
+        <Property type="Excel" key="Sheet_Cell" controlType="String" valueType="System.String" formatType="String" required="True" visible="True" readonly="False" encrypted="False" isChanged="N" value="'C5'" />
+      </Properties>
+      <RelatedSteps />
+      <Script><![CDATA[this.searchE = StepPlayer.Run('Excel.ReadString', this.readstring_info_2);]]></Script>
+    </Step>
+    <Step id="S8462682d01c54cb1905cc1a49468fd0f" ver="311240315" createVer="310230724" type="Excel" name="ReadString" dpName="ReadString" dpValue="C6" dpValue2="" dpImage="" tag="" depth="1" stmttype="Normal" enabled="True" mainSet="0">
+      <Properties id="2805ad4d-ca93-4b2e-8dac-a994e490310a" type="Excel">
+        <Property type="Excel" key="Options_OnError" controlType="PropertyItemEventHandlerView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+        <Property type="Excel" key="Key_Description" controlType="PropertyItemTextEditorView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="키워드" />
+        <Property type="Excel" key="Output_ReadData" controlType="OutputControlType" valueType="System.String" formatType="Variable" required="True" visible="True" readonly="False" encrypted="False" isChanged="N" value="this.keyword" />
+        <Property type="Excel" key="Input_InputExcel" controlType="InputControlType" valueType="System.Object" formatType="Variable" required="True" visible="True" readonly="False" encrypted="False" isChanged="N" value="ACTIVE_EXCEL" />
+        <Property type="Excel" key="Sheet_SheetName" controlType="String" valueType="System.String" formatType="String" required="True" visible="True" readonly="False" encrypted="False" isChanged="N" value="ACTIVE_SHEET" />
+        <Property type="Excel" key="Sheet_Cell" controlType="String" valueType="System.String" formatType="String" required="True" visible="True" readonly="False" encrypted="False" isChanged="N" value="'C6'" />
+      </Properties>
+      <RelatedSteps />
+      <Script><![CDATA[this.keyword = StepPlayer.Run('Excel.ReadString', this.readstring_info_3);]]></Script>
+    </Step>
+    <Step id="S0cf766fae1b740ae862af9b60921048c" ver="311240315" createVer="310230724" type="Excel" name="ReadString" dpName="ReadString" dpValue="C7" dpValue2="" dpImage="" tag="" depth="1" stmttype="Normal" enabled="True" mainSet="0">
+      <Properties id="2805ad4d-ca93-4b2e-8dac-a994e490310a" type="Excel">
+        <Property type="Excel" key="Options_OnError" controlType="PropertyItemEventHandlerView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+        <Property type="Excel" key="Key_Description" controlType="PropertyItemTextEditorView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="수신 메일" />
+        <Property type="Excel" key="Output_ReadData" controlType="OutputControlType" valueType="System.String" formatType="Variable" required="True" visible="True" readonly="False" encrypted="False" isChanged="N" value="this.recipientMail" />
+        <Property type="Excel" key="Input_InputExcel" controlType="InputControlType" valueType="System.Object" formatType="Variable" required="True" visible="True" readonly="False" encrypted="False" isChanged="N" value="ACTIVE_EXCEL" />
+        <Property type="Excel" key="Sheet_SheetName" controlType="String" valueType="System.String" formatType="String" required="True" visible="True" readonly="False" encrypted="False" isChanged="N" value="ACTIVE_SHEET" />
+        <Property type="Excel" key="Sheet_Cell" controlType="String" valueType="System.String" formatType="String" required="True" visible="True" readonly="False" encrypted="False" isChanged="N" value="'C7'" />
+      </Properties>
+      <RelatedSteps />
+      <Script><![CDATA[this.recipientMail = StepPlayer.Run('Excel.ReadString', this.readstring_info_4);]]></Script>
+    </Step>
+    <Step id="S1455b65f849640388b0252bd12a97fe8" ver="311240315" createVer="310230724" type="Excel" name="ReadString" dpName="ReadString" dpValue="C8" dpValue2="" dpImage="" tag="" depth="1" stmttype="Normal" enabled="True" mainSet="0">
+      <Properties id="2805ad4d-ca93-4b2e-8dac-a994e490310a" type="Excel">
+        <Property type="Excel" key="Options_OnError" controlType="PropertyItemEventHandlerView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+        <Property type="Excel" key="Key_Description" controlType="PropertyItemTextEditorView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="발송 메일" />
+        <Property type="Excel" key="Output_ReadData" controlType="OutputControlType" valueType="System.String" formatType="Variable" required="True" visible="True" readonly="False" encrypted="False" isChanged="N" value="this.senderMail" />
+        <Property type="Excel" key="Input_InputExcel" controlType="InputControlType" valueType="System.Object" formatType="Variable" required="True" visible="True" readonly="False" encrypted="False" isChanged="N" value="ACTIVE_EXCEL" />
+        <Property type="Excel" key="Sheet_SheetName" controlType="String" valueType="System.String" formatType="String" required="True" visible="True" readonly="False" encrypted="False" isChanged="N" value="ACTIVE_SHEET" />
+        <Property type="Excel" key="Sheet_Cell" controlType="String" valueType="System.String" formatType="String" required="True" visible="True" readonly="False" encrypted="False" isChanged="N" value="'C8'" />
+      </Properties>
+      <RelatedSteps />
+      <Script><![CDATA[this.senderMail = StepPlayer.Run('Excel.ReadString', this.readstring_info_5);]]></Script>
+    </Step>
+    <Step id="Sacbed86dadec4ba0b6b362feb8879593" ver="311240315" createVer="310230724" type="Flow" name="ExecuteScript" dpName="ExecuteScript" dpValue="" dpValue2="" dpImage="" tag="" depth="1" stmttype="Normal" enabled="True" mainSet="0">
+      <Properties id="2a6532d3-348e-4548-b1d5-f8bf88455079" type="Flow">
+        <Property type="Flow" key="Options_OnError" controlType="PropertyItemEventHandlerView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+        <Property type="Flow" key="Key_Description" controlType="PropertyItemTextEditorView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="가져온 정보 배열 형태로 변환" />
+        <Property type="Flow" key="Conditions_Title" controlType="String" valueType="System.String" formatType="String" required="True" visible="True" readonly="False" encrypted="False" isChanged="N" value="정보 split하기" />
+        <Property type="Flow" key="Key_Script" controlType="PropertyItemTextEditorView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="function arryTrim(arry) {&#xD;&#xA;    &#xD;&#xA;    var arr1 = [];&#xD;&#xA;    &#xD;&#xA;    for(var i = 0; i &lt; arry.length; i++) {&#xD;&#xA;        arr1.push(arry[i].trim());&#xD;&#xA;    }&#xD;&#xA;    &#xD;&#xA;    return arr1&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;try {&#xD;&#xA;    var tmp1 = this.searchE.split(',');   // 엔진 정보 배열&#xD;&#xA;    this.searchE = arryTrim(tmp1);&#xD;&#xA;    &#xD;&#xA;} catch(err) {&#xD;&#xA;    this.searchE = this.searchE.trim().ToString();&#xD;&#xA;    }&#xD;&#xA;    &#xD;&#xA;try {&#xD;&#xA;    var tmp2 = this.keyword.split(',');   // 키워드 정보 배열&#xD;&#xA;    this.keyword = arryTrim(tmp2);&#xD;&#xA;    &#xD;&#xA;} catch(err) {&#xD;&#xA;    this.keyword = this.keyword.trim().ToString();&#xD;&#xA;    }&#xD;&#xA;    &#xD;&#xA;try {&#xD;&#xA;     var tmp3 = this.recipientMail.split(',');   // 메일 정보 배열&#xD;&#xA;     this.recipientMail = arryTrim(tmp3);&#xD;&#xA;     &#xD;&#xA;} catch(err) {&#xD;&#xA;    this.recipientMail = this.recipientMail.trim().ToString();&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;" />
+      </Properties>
+      <RelatedSteps />
+      <Script><![CDATA[function arryTrim(arry) {
+    
+    var arr1 = [];
+    
+    for(var i = 0; i < arry.length; i++) {
+        arr1.push(arry[i].trim());
+    }
+    
+    return arr1
+}
+
+try {
+    var tmp1 = this.searchE.split(',');   // 엔진 정보 배열
+    this.searchE = arryTrim(tmp1);
+    
+} catch(err) {
+    this.searchE = this.searchE.trim().ToString();
+    }
+    
+try {
+    var tmp2 = this.keyword.split(',');   // 키워드 정보 배열
+    this.keyword = arryTrim(tmp2);
+    
+} catch(err) {
+    this.keyword = this.keyword.trim().ToString();
+    }
+    
+try {
+     var tmp3 = this.recipientMail.split(',');   // 메일 정보 배열
+     this.recipientMail = arryTrim(tmp3);
+     
+} catch(err) {
+    this.recipientMail = this.recipientMail.trim().ToString();
+    }
+
+
+
+
+]]></Script>
+    </Step>
+    <Step id="Sf5900f495ebb4ecb9226dfddec5879ec" ver="311240315" createVer="310230724" type="Excel" name="CloseExcel" dpName="CloseExcel" dpValue="ACTIVE_EXCEL" dpValue2="" dpImage="" tag="" depth="1" stmttype="Normal" enabled="True" mainSet="0">
+      <Properties id="ff838f98-5b22-4d46-a62e-e36967f004d1" type="Excel">
+        <Property type="Excel" key="Options_OnError" controlType="PropertyItemEventHandlerView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+        <Property type="Excel" key="Key_Description" controlType="PropertyItemTextEditorView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+        <Property type="Excel" key="Input_InputExcel" controlType="InputControlType" valueType="System.Object" formatType="Variable" required="True" visible="True" readonly="False" encrypted="False" isChanged="N" value="ACTIVE_EXCEL" />
+        <Property type="Excel" key="File_Force" controlType="Boolean" valueType="System.Boolean" formatType="Boolean" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="False" />
+      </Properties>
+      <RelatedSteps />
+      <Script><![CDATA[StepPlayer.Run('Excel.CloseExcel', this.closeexcel_info_7);]]></Script>
+    </Step>
+  </Steps>
+  <JScript><![CDATA[function T_config에서_정보가져오기() {
+
+    this.senderMail;
+    this.excelName = '뉴스알리미_config.xlsx';
+    this.recipientMail;
+    this.keyword;
+    this.searchE;
+
+    this.RPAGOTOENABLE = false;
+    this.GotoStepRetryCntMap = {};
+    this.GotoBlockMap = {};
+    this.GotoReverseBlockMap = {};
+    this.GotoStepBlockTypeMap = {};
+
+
+    this.run = function() {
+
+        //------------------------------------------------
+        STEP('S2ab173ede36247e58ecdd64fcfd287a5', '[1] OpenExcel');
+        RESULT = StepPlayer.Run('Excel.OpenExcel', this.openexcel_info_1);
+
+        //------------------------------------------------
+        STEP('S1c0c90349431425a93d1986a5945d543', '[2] ReadString');
+        this.searchE = StepPlayer.Run('Excel.ReadString', this.readstring_info_2);
+
+        //------------------------------------------------
+        STEP('S8462682d01c54cb1905cc1a49468fd0f', '[3] ReadString');
+        this.keyword = StepPlayer.Run('Excel.ReadString', this.readstring_info_3);
+
+        //------------------------------------------------
+        STEP('S0cf766fae1b740ae862af9b60921048c', '[4] ReadString');
+        this.recipientMail = StepPlayer.Run('Excel.ReadString', this.readstring_info_4);
+
+        //------------------------------------------------
+        STEP('S1455b65f849640388b0252bd12a97fe8', '[5] ReadString');
+        this.senderMail = StepPlayer.Run('Excel.ReadString', this.readstring_info_5);
+
+        //------------------------------------------------
+        STEP('Sacbed86dadec4ba0b6b362feb8879593', '[6] ExecuteScript');
+        function arryTrim(arry) {
+            
+            var arr1 = [];
+            
+            for(var i = 0; i < arry.length; i++) {
+                arr1.push(arry[i].trim());
+            }
+            
+            return arr1
+        }
+
+        try {
+            var tmp1 = this.searchE.split(',');   // 엔진 정보 배열
+            this.searchE = arryTrim(tmp1);
+            
+        } catch(err) {
+            this.searchE = this.searchE.trim().ToString();
+            }
+            
+        try {
+            var tmp2 = this.keyword.split(',');   // 키워드 정보 배열
+            this.keyword = arryTrim(tmp2);
+            
+        } catch(err) {
+            this.keyword = this.keyword.trim().ToString();
+            }
+            
+        try {
+             var tmp3 = this.recipientMail.split(',');   // 메일 정보 배열
+             this.recipientMail = arryTrim(tmp3);
+             
+        } catch(err) {
+            this.recipientMail = this.recipientMail.trim().ToString();
+            }
+
+
+
+
+
+
+        //------------------------------------------------
+        STEP('Sf5900f495ebb4ecb9226dfddec5879ec', '[7] CloseExcel');
+        StepPlayer.Run('Excel.CloseExcel', this.closeexcel_info_7);
+
+
+    }
+
+    this.execute = function() {
+        var result = null;
+        result = this.run()
+        if (result != null)
+            return result;
+        return {'senderMail':this.senderMail, 'recipientMail':this.recipientMail, 'keyword':this.keyword, 'searchE':this.searchE};
+    }
+}
+]]></JScript>
+  <Diagram version="1.300" nodesize="Normal">
+    <StepNodes>
+      <StepNode step_id="S2ab173ede36247e58ecdd64fcfd287a5" group_name="6274e392-7653-4570-83ba-39788251760f_Excel 열기" folded="False" color="" />
+      <StepNode step_id="S1c0c90349431425a93d1986a5945d543" group_name="ed70bf45-f2db-49a3-9818-aeff7767c44e_데이터 읽어오기" folded="False" color="" />
+      <StepNode step_id="S8462682d01c54cb1905cc1a49468fd0f" group_name="ed70bf45-f2db-49a3-9818-aeff7767c44e_데이터 읽어오기" folded="False" color="" />
+      <StepNode step_id="S0cf766fae1b740ae862af9b60921048c" group_name="ed70bf45-f2db-49a3-9818-aeff7767c44e_데이터 읽어오기" folded="False" color="" />
+      <StepNode step_id="S1455b65f849640388b0252bd12a97fe8" group_name="ed70bf45-f2db-49a3-9818-aeff7767c44e_데이터 읽어오기" folded="False" color="" />
+      <StepNode step_id="Sacbed86dadec4ba0b6b362feb8879593" group_name="0ae083ec-f859-4c4b-9559-4eb501ad8506_배열 변환" folded="False" color="" />
+      <StepNode step_id="Sf5900f495ebb4ecb9226dfddec5879ec" group_name="e357a363-91df-4a23-99a1-727a466f2263_Excel 닫기" folded="False" color="" />
+    </StepNodes>
+  </Diagram>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>DfLvd3H/WNC3hC0SwlDqxixOZ+U=</DigestValue></Reference></SignedInfo><SignatureValue>AFZBuMoKL1anGUwlvoEpFM8ElHj9tPbV7QPIAX//TX07PQ0yovbYXZjyAPEyG4qiFm1qikAlmLmnLuj0fZ9cNqYYWmLiVQnssUYO2Ws3G9dZt8oNauQOINprNvly96z1G3CN/upuOHUZbno5nvCVc+xmzn5vE05h4KwOXPjZhxVbm47++pEpV1qEDzIx/jOvql1LcUj0nGFkoQElm9WKdBrIkkkzgwgrYM6pWvJjEYc+XN23hyBXyHG4gS0tKMyrAMLeGKfj1hNuUkmCjq6xTnrXCO/76qzVs2YCJ7yky93bjkDzc6wWPUb0P/8RIplwY/hD8uIyd3w5xG3MKy1F3Q==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=DESIGNER-00039, O=192.168.0.50, OU=IPA_DESIGNER, L="", S="", C=""</X509SubjectName></X509Data></KeyInfo></Signature></Process>

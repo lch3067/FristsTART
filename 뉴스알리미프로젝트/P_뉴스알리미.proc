@@ -1,0 +1,398 @@
+<Process id="0630864e-a847-4cd0-9c53-a73c38526b2d" type="process" workType="foreground" name="P_뉴스알리미" version="1.0" designerVersion="3.1.124.00322" lastPublishedServer="192.168.0.50.tenant_1" readonly="false" isValid="true" DesignedBy="Designer" Template="" StepCount="19" Orientation="horizontal">
+  <Properties>
+    <Property key="Description" controlType="PropertyItemTextEditorView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" enabled="True" />
+    <Property key="onBefore" controlType="PropertyItemEventHandlerView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" enabled="True" />
+    <Property key="onAfter" controlType="PropertyItemEventHandlerView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" enabled="True" />
+    <Property key="onError" controlType="PropertyItemEventHandlerView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" enabled="True" />
+    <Property key="Timeout" controlType="Int32" valueType="System.Int32" formatType="Integer" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="0" />
+    <Property key="RunningTime" controlType="Int32" valueType="System.Int32" formatType="Integer" required="False" visible="True" readonly="True" encrypted="False" isChanged="N" value="10" />
+    <Property key="Os" controlType="String" valueType="System.String" formatType="String" required="False" visible="True" readonly="True" encrypted="False" isChanged="N" value="Microsoft Windows 11 Pro64비트" />
+    <Property key="Resolution" controlType="String" valueType="System.String" formatType="String_Size" required="False" visible="True" readonly="True" encrypted="False" isChanged="N" value="3840x1080" />
+    <Property key="CreatedDate" controlType="String" valueType="System.String" formatType="String_DateTime" required="False" visible="True" readonly="True" encrypted="False" isChanged="N" value="2024-01-19 10:11:01" />
+    <Property key="CreatedBy" controlType="String" valueType="System.String" formatType="String" required="False" visible="True" readonly="True" encrypted="False" isChanged="N" value="eunsu9991" />
+    <Property key="LastModifiedDate" controlType="String" valueType="System.String" formatType="String_DateTime" required="False" visible="True" readonly="True" encrypted="False" isChanged="N" value="2024-09-03 13:42:49" />
+    <Property key="LastModifiedBy" controlType="String" valueType="System.String" formatType="String" required="False" visible="True" readonly="True" encrypted="False" isChanged="N" value="" />
+    <Property key="LastPublishedDate" controlType="String" valueType="System.String" formatType="String_DateTime" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="2024-04-16 10:17:15" />
+    <Property key="LastPublishedBy" controlType="String" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="eunsu9991" />
+  </Properties>
+  <LinkItems><LinkItem id="9d3cb568-95fe-4f31-89c9-018bf9f747a7" name="T_config에서_정보가져오기" category="NormalTask" isChanged="N" desc="" /><LinkItem id="f30a26f2-fe0d-4aa7-b355-4dfd16f3812f" name="T_구글크롤링" category="NormalTask" isChanged="N" desc="" /><LinkItem id="fd0e4e82-b884-4114-bae1-991cf33474a4" name="T_네이버크롤링" category="NormalTask" isChanged="N" desc="" /><LinkItem id="69bfce03-2efa-4471-90e9-46ec6c8e340a" name="T_중복제거" category="NormalTask" isChanged="N" desc="" /><LinkItem id="e4ead40a-6a74-4a13-860b-07b18b38fe87" name="T_html형식변환" category="NormalTask" isChanged="N" desc="" /><LinkItem id="ba4edf4a-64b4-4d08-9933-032a2370042b" name="T_메일전송" category="NormalTask" isChanged="N" desc="" /></LinkItems>
+  <Variables />
+  <Steps>
+    <Step id="Sb1c451d54443402b8dccbbaf481589ed" ver="311240315" createVer="311240315" type="Win" name="CloseAll" dpName="CloseAll" dpValue="this.openApp_pid" dpValue2="" dpImage="" tag="" depth="1" stmttype="Normal" enabled="True" mainSet="0">
+      <Properties id="138c6386-2aa8-4120-a24e-e0c28d9c714d" type="Win">
+        <Property type="Win" key="Options_OnError" controlType="PropertyItemEventHandlerView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+        <Property type="Win" key="Key_Description" controlType="PropertyItemTextEditorView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+        <Property type="Win" key="Application_ProcessName" controlType="String" valueType="System.String" formatType="String" required="True" visible="True" readonly="False" encrypted="False" isChanged="N" value="this.openApp_pid" />
+        <Property type="Win" key="Options_Force" controlType="Boolean" valueType="System.Boolean" formatType="Boolean" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="True" />
+      </Properties>
+      <RelatedSteps />
+      <Script><![CDATA[StepPlayer.Run('Win.CloseAll', this.closeall_info_1);]]></Script>
+    </Step>
+    <Step id="S853de342739c4e6a9bf2c9f440ae8966" ver="311240315" createVer="310230724" type="Flow" name="RunTask" dpName="RunTask" dpValue="this.sendmail, this.keyword, this.searchE, this.senderMail" dpValue2="" dpImage="" tag="" depth="1" stmttype="Normal" enabled="True" mainSet="0">
+      <Properties id="12bd74c7-b7ec-47cb-8d6c-66440f668805" type="Flow">
+        <Property type="Flow" key="Options_OnError" controlType="PropertyItemEventHandlerView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+        <Property type="Flow" key="Key_Description" controlType="PropertyItemTextEditorView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+        <Property type="Flow" key="Conditions_TaskName" controlType="String" valueType="System.String" formatType="String" required="False" visible="True" readonly="True" encrypted="False" isChanged="N" value="T_config에서_정보가져오기" />
+        <Property type="Flow" key="Output_recipientMail" controlType="OutputControlType" valueType="System.Object" formatType="Variable" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="this.sendmail" />
+        <Property type="Flow" key="Output_keyword" controlType="OutputControlType" valueType="System.Object" formatType="Variable" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="this.keyword" />
+        <Property type="Flow" key="Output_searchE" controlType="OutputControlType" valueType="System.Object" formatType="Variable" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="this.searchE" />
+        <Property type="Flow" key="Output_senderMail" controlType="OutputControlType" valueType="System.Object" formatType="Variable" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="this.senderMail" />
+      </Properties>
+      <RelatedSteps />
+      <Script><![CDATA[RunTask(this, 'T_config에서_정보가져오기', null);]]></Script>
+    </Step>
+    <Step id="Se3b959db61e04e43a1589738719e3c8a" ver="311240315" createVer="311240219" type="Flow" name="ExecuteScript" dpName="ExecuteScript" dpValue="" dpValue2="" dpImage="" tag="" depth="1" stmttype="Normal" enabled="True" mainSet="0">
+      <Properties id="5cb0703d-b9ef-45b4-8b04-557fa8ee02af" type="Flow">
+        <Property type="Flow" key="Options_OnError" controlType="PropertyItemEventHandlerView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+        <Property type="Flow" key="Key_Description" controlType="PropertyItemTextEditorView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+        <Property type="Flow" key="Conditions_Title" controlType="String" valueType="System.String" formatType="String" required="True" visible="True" readonly="False" encrypted="False" isChanged="N" value="날짜 가져오기" />
+        <Property type="Flow" key="Key_Script" controlType="PropertyItemTextEditorView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="// yyyy-mm-0d 형태 변환 함수 ex)2023-12-05&#xD;&#xA;function leftPad(value) {&#xD;&#xA;&#x9;if(value &gt;= 10) {&#xD;&#xA;&#x9;&#x9;return value&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;return `0${value}`&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;// yyyy.mm.dd 형태로 바꾸는 함수&#xD;&#xA;function getDateStr(myDate) {&#xD;&#xA;&#x9;var year = myDate.getFullYear();&#xD;&#xA;&#x9;var month = leftPad(myDate.getMonth() + 1);&#xD;&#xA;&#x9;var day = leftPad(myDate.getDate());&#xD;&#xA;&#xD;&#xA;&#x9;return year + '.' + month + '.' + day&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;// 이전 날짜 가져오는 함수&#xD;&#xA;function getBeforeDate(i) {&#xD;&#xA;&#x9;var d = new Date();&#xD;&#xA;&#x9;var dayofMonth = d.getDate();&#xD;&#xA;&#x9;d.setDate(dayofMonth - i);&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;return getDateStr(d)&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;Global.today = getBeforeDate(0);        // 오늘 날짜&#xD;&#xA;Global.yesterday = getBeforeDate(1);    // 하루전 날짜&#xD;&#xA;Global.twodaysAgo = getBeforeDate(2);   // 이틀전 날짜" />
+      </Properties>
+      <RelatedSteps />
+      <Script><![CDATA[// yyyy-mm-0d 형태 변환 함수 ex)2023-12-05
+function leftPad(value) {
+	if(value >= 10) {
+		return value
+	}
+
+	return `0${value}`
+}
+
+// yyyy.mm.dd 형태로 바꾸는 함수
+function getDateStr(myDate) {
+	var year = myDate.getFullYear();
+	var month = leftPad(myDate.getMonth() + 1);
+	var day = leftPad(myDate.getDate());
+
+	return year + '.' + month + '.' + day
+}
+
+// 이전 날짜 가져오는 함수
+function getBeforeDate(i) {
+	var d = new Date();
+	var dayofMonth = d.getDate();
+	d.setDate(dayofMonth - i);
+	
+	return getDateStr(d)
+}
+
+Global.today = getBeforeDate(0);        // 오늘 날짜
+Global.yesterday = getBeforeDate(1);    // 하루전 날짜
+Global.twodaysAgo = getBeforeDate(2);   // 이틀전 날짜]]></Script>
+    </Step>
+    <Step id="Sd1afd59fb50e4f14b16f267c97503093" ver="311240315" createVer="310230724" type="Flow" name="Loop" dpName="For" dpValue="this.i &lt; this.searchE.length" dpValue2="" dpImage="" tag="" depth="1" stmttype="OpenBlock" enabled="True" mainSet="0">
+      <Properties id="33d969b7-8252-43c1-b282-96f559fc17c6" type="Flow">
+        <Property type="Flow" key="Key_Description" controlType="PropertyItemTextEditorView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="검색 엔진 길이 만큼 for" />
+        <Property type="Flow" key="Conditions_InitializeIndex" controlType="Object" valueType="System.Object" formatType="Expression" required="True" visible="True" readonly="False" encrypted="False" isChanged="N" value="this.i = 0" />
+        <Property type="Flow" key="Conditions_LoopCondition" controlType="Object" valueType="System.Object" formatType="Expression" required="True" visible="True" readonly="False" encrypted="False" isChanged="N" value="this.i &lt; this.searchE.length" />
+        <Property type="Flow" key="Conditions_UpdateIndex" controlType="Object" valueType="System.Object" formatType="Expression" required="True" visible="True" readonly="False" encrypted="False" isChanged="N" value="this.i++" />
+      </Properties>
+      <RelatedSteps>
+        <RelatedStep id="S6d26b7cb9b66424897882217822152e8" type="Flow" name="EndLoop" />
+      </RelatedSteps>
+      <Script><![CDATA[for (this.i = 0; this.i < this.searchE.length; this.i++) {]]></Script>
+    </Step>
+    <Step id="S5202430edde84dbfab588bf5b6d7ec41" ver="311240315" createVer="310230724" type="Flow" name="SwitchGroup" dpName="SwitchGroup" dpValue="" dpValue2="" dpImage="" tag="" depth="2" stmttype="OpenSwichBlock" enabled="True" mainSet="0">
+      <Properties id="846fb4e7-77f2-4825-8d33-a75d923be502" type="Flow">
+        <Property type="Flow" key="Key_Description" controlType="PropertyItemTextEditorView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+        <Property type="Flow" key="Conditions_Condition" controlType="Object" valueType="System.Object" formatType="Expression" required="True" visible="True" readonly="False" encrypted="False" isChanged="N" value="this.searchE[this.i]" />
+      </Properties>
+      <RelatedSteps />
+      <Script><![CDATA[switch (this.searchE[this.i]) {]]></Script>
+    </Step>
+    <Step id="S2e33ea1947cd40f7ad0db1179a86deb7" ver="311240315" createVer="310230724" type="Flow" name="SwitchCase" dpName="SwitchCase" dpValue="" dpValue2="" dpImage="" tag="" depth="3" stmttype="OpenSwichBlock" enabled="True" mainSet="0">
+      <Properties id="e67e0640-dfe5-4e64-b96d-9f98f9aa5d8b" type="Flow">
+        <Property type="Flow" key="Key_Description" controlType="PropertyItemTextEditorView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+        <Property type="Flow" key="Conditions_Case" controlType="Object" valueType="System.Object" formatType="Expression" required="True" visible="True" readonly="False" encrypted="False" isChanged="N" value="'구글'" />
+      </Properties>
+      <RelatedSteps>
+        <RelatedStep id="S57159406f5384b9793d163021998ec37" type="Flow" name="EndSwitchCase" />
+      </RelatedSteps>
+      <Script><![CDATA[case '구글':{ ]]></Script>
+    </Step>
+    <Step id="Sbde345f66c7b4505806cec95c2f8d800" ver="311240315" createVer="310230724" type="Flow" name="RunTask" dpName="RunTask" dpValue="this.keyword" dpValue2="" dpImage="" tag="" depth="4" stmttype="Normal" enabled="True" mainSet="0">
+      <Properties id="5db4e90d-0fe2-4d28-96ad-9480bfa914b2" type="Flow">
+        <Property type="Flow" key="Options_OnError" controlType="PropertyItemEventHandlerView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+        <Property type="Flow" key="Key_Description" controlType="PropertyItemTextEditorView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+        <Property type="Flow" key="Conditions_TaskName" controlType="String" valueType="System.String" formatType="String" required="False" visible="True" readonly="True" encrypted="False" isChanged="N" value="T_구글크롤링" />
+        <Property type="Flow" key="Input_keyword" controlType="InputControlType" valueType="System.Object" formatType="Variable" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="this.keyword" order="1" />
+      </Properties>
+      <RelatedSteps />
+      <Script><![CDATA[RunTask(this, 'T_구글크롤링', {'keyword':this.keyword});]]></Script>
+    </Step>
+    <Step id="S57159406f5384b9793d163021998ec37" ver="311240315" createVer="310230724" type="Flow" name="EndSwitchCase" dpName="EndSwitchCase" dpValue="" dpValue2="" dpImage="" tag="" depth="4" stmttype="CloseSwichBlock" enabled="True" mainSet="0">
+      <Properties id="6da2b0b6-4fce-480f-83ae-65b882c6a3ff" type="Flow">
+        <Property type="Flow" key="Key_Description" controlType="PropertyItemTextEditorView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+      </Properties>
+      <RelatedSteps>
+        <RelatedStep id="S2e33ea1947cd40f7ad0db1179a86deb7" type="Flow" name="SwitchCase" />
+      </RelatedSteps>
+      <Script><![CDATA[break;
+}]]></Script>
+    </Step>
+    <Step id="S30e406580280431b86cd5d4ffadbf07e" ver="311240315" createVer="310230724" type="Flow" name="SwitchCase" dpName="SwitchCase" dpValue="" dpValue2="" dpImage="" tag="" depth="3" stmttype="OpenSwichBlock" enabled="True" mainSet="0">
+      <Properties id="1ac4a2ae-ee69-4538-90de-3001975d357f" type="Flow">
+        <Property type="Flow" key="Key_Description" controlType="PropertyItemTextEditorView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+        <Property type="Flow" key="Conditions_Case" controlType="Object" valueType="System.Object" formatType="Expression" required="True" visible="True" readonly="False" encrypted="False" isChanged="N" value="'네이버'" />
+      </Properties>
+      <RelatedSteps>
+        <RelatedStep id="Sed6b06fa048844fa9110c083c48fb75e" type="Flow" name="EndSwitchCase" />
+      </RelatedSteps>
+      <Script><![CDATA[case '네이버':{ ]]></Script>
+    </Step>
+    <Step id="S9a94405efd4c46be9792fada616d98fe" ver="311240315" createVer="310230724" type="Flow" name="RunTask" dpName="RunTask" dpValue="this.keyword" dpValue2="" dpImage="" tag="" depth="4" stmttype="Normal" enabled="True" mainSet="0">
+      <Properties id="23f75c9e-5905-4b12-b783-026bd2f9bd9b" type="Flow">
+        <Property type="Flow" key="Options_OnError" controlType="PropertyItemEventHandlerView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+        <Property type="Flow" key="Key_Description" controlType="PropertyItemTextEditorView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+        <Property type="Flow" key="Conditions_TaskName" controlType="String" valueType="System.String" formatType="String" required="False" visible="True" readonly="True" encrypted="False" isChanged="N" value="T_네이버크롤링" />
+        <Property type="Flow" key="Input_keyword" controlType="InputControlType" valueType="System.Object" formatType="Variable" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="this.keyword" order="1" />
+      </Properties>
+      <RelatedSteps />
+      <Script><![CDATA[RunTask(this, 'T_네이버크롤링', {'keyword':this.keyword});]]></Script>
+    </Step>
+    <Step id="Sed6b06fa048844fa9110c083c48fb75e" ver="311240315" createVer="310230724" type="Flow" name="EndSwitchCase" dpName="EndSwitchCase" dpValue="" dpValue2="" dpImage="" tag="" depth="4" stmttype="CloseSwichBlock" enabled="True" mainSet="0">
+      <Properties id="65f60c08-5da4-466c-9468-2bf4bdb8ffb1" type="Flow">
+        <Property type="Flow" key="Key_Description" controlType="PropertyItemTextEditorView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+      </Properties>
+      <RelatedSteps>
+        <RelatedStep id="S30e406580280431b86cd5d4ffadbf07e" type="Flow" name="SwitchCase" />
+      </RelatedSteps>
+      <Script><![CDATA[break;
+}]]></Script>
+    </Step>
+    <Step id="S3e379a2c8bd5402f9f12241eb939072b" ver="311240315" createVer="310230724" type="Flow" name="SwitchDefault" dpName="SwitchDefault" dpValue="" dpValue2="" dpImage="" tag="" depth="3" stmttype="OpenSwichBlock" enabled="True" mainSet="0">
+      <Properties id="8a057cf4-1cec-4c9b-9f16-9aabd080060a" type="Flow">
+        <Property type="Flow" key="Key_Description" controlType="PropertyItemTextEditorView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="아직 없는 검색 엔진" />
+      </Properties>
+      <RelatedSteps>
+        <RelatedStep id="S1f243a0bd1994bf49cfa13e15ad63173" type="Flow" name="EndSwitchDefault" />
+      </RelatedSteps>
+      <Script><![CDATA[default:{ ]]></Script>
+    </Step>
+    <Step id="S6ab3f8ce20534d1087466ec208d9e17d" ver="311240315" createVer="310230724" type="Desktop" name="MessageBox" dpName="MessageBox" dpValue="아직 없는 검색 엔진입니다" dpValue2="" dpImage="" tag="" depth="4" stmttype="Normal" enabled="True" mainSet="0">
+      <Properties id="29ffdc14-6d82-47a2-8181-e74a1cb59229" type="Desktop">
+        <Property type="Desktop" key="Options_OnError" controlType="PropertyItemEventHandlerView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+        <Property type="Desktop" key="Key_Description" controlType="PropertyItemTextEditorView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+        <Property type="Desktop" key="Conditions_Arguments" controlType="Object" valueType="System.Object" formatType="Any" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="'아직 없는 검색 엔진입니다'" />
+        <Property type="Desktop" key="Command_Timeout" controlType="Int32" valueType="System.Int32" formatType="Integer" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+      </Properties>
+      <RelatedSteps />
+      <Script><![CDATA[MsgBox('아직 없는 검색 엔진입니다');]]></Script>
+    </Step>
+    <Step id="S5d2dd9e3d57f4a34be428fb959d4b753" ver="311240315" createVer="310230724" type="Flow" name="Assign" dpName="Assign" dpValue="RESULT='아직 없는 검색 엔진입니다'" dpValue2="" dpImage="" tag="" depth="4" stmttype="Normal" enabled="True" mainSet="0">
+      <Properties id="52f79478-3dbe-463b-9768-fecd15b8e9d5" type="Flow">
+        <Property type="Flow" key="Options_OnError" controlType="PropertyItemEventHandlerView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+        <Property type="Flow" key="Key_Description" controlType="PropertyItemTextEditorView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+        <Property type="Flow" key="Conditions_Variable" controlType="OutputControlType" valueType="System.Object" formatType="Variable" required="True" visible="True" readonly="False" encrypted="False" isChanged="N" value="RESULT" />
+        <Property type="Flow" key="Conditions_Value" controlType="PropertyItemTextView" valueType="System.String" formatType="String" required="True" visible="True" readonly="False" encrypted="False" isChanged="N" value="'아직 없는 검색 엔진입니다'" />
+      </Properties>
+      <RelatedSteps />
+      <Script><![CDATA[RESULT = '아직 없는 검색 엔진입니다';]]></Script>
+    </Step>
+    <Step id="S1f243a0bd1994bf49cfa13e15ad63173" ver="311240315" createVer="310230724" type="Flow" name="EndSwitchDefault" dpName="EndSwitchDefault" dpValue="" dpValue2="" dpImage="" tag="" depth="4" stmttype="CloseSwichBlock" enabled="True" mainSet="0">
+      <Properties id="ccc7baf4-3a0e-48b0-af30-deb865556b32" type="Flow">
+        <Property type="Flow" key="Key_Description" controlType="PropertyItemTextEditorView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+      </Properties>
+      <RelatedSteps>
+        <RelatedStep id="S3e379a2c8bd5402f9f12241eb939072b" type="Flow" name="SwitchDefault" />
+      </RelatedSteps>
+      <Script><![CDATA[break;
+}]]></Script>
+    </Step>
+    <Step id="S6d26b7cb9b66424897882217822152e8" ver="311240315" createVer="310230724" type="Flow" name="EndLoop" dpName="End-For" dpValue="" dpValue2="" dpImage="" tag="" depth="2" stmttype="CloseBlock" enabled="True" mainSet="0">
+      <Properties id="94d9086e-a8fd-4aec-b8fc-9079e1414da3" type="Flow">
+        <Property type="Flow" key="Key_Description" controlType="PropertyItemTextEditorView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+      </Properties>
+      <RelatedSteps>
+        <RelatedStep id="Sd1afd59fb50e4f14b16f267c97503093" type="Flow" name="Loop" />
+      </RelatedSteps>
+      <Script><![CDATA[}]]></Script>
+    </Step>
+    <Step id="S81874f30c2ad427aa8389fca1c3303b9" ver="311240315" createVer="310230724" type="Flow" name="RunTask" dpName="RunTask" dpValue="" dpValue2="" dpImage="" tag="" depth="1" stmttype="Normal" enabled="True" mainSet="0">
+      <Properties id="12a597d0-964e-41b3-acbf-a33b65328abc" type="Flow">
+        <Property type="Flow" key="Options_OnError" controlType="PropertyItemEventHandlerView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+        <Property type="Flow" key="Key_Description" controlType="PropertyItemTextEditorView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+        <Property type="Flow" key="Conditions_TaskName" controlType="String" valueType="System.String" formatType="String" required="False" visible="True" readonly="True" encrypted="False" isChanged="N" value="T_중복제거" />
+      </Properties>
+      <RelatedSteps />
+      <Script><![CDATA[RunTask(this, 'T_중복제거', null);]]></Script>
+    </Step>
+    <Step id="Se7c4c1c984da417ea9e581f95a01ebec" ver="311240315" createVer="310230724" type="Flow" name="RunTask" dpName="RunTask" dpValue="this.htmlFinal" dpValue2="" dpImage="" tag="" depth="1" stmttype="Normal" enabled="True" mainSet="0">
+      <Properties id="93f7c0b4-1de8-4aa5-ac32-d2089c0f1833" type="Flow">
+        <Property type="Flow" key="Options_OnError" controlType="PropertyItemEventHandlerView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+        <Property type="Flow" key="Key_Description" controlType="PropertyItemTextEditorView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+        <Property type="Flow" key="Conditions_TaskName" controlType="String" valueType="System.String" formatType="String" required="False" visible="True" readonly="True" encrypted="False" isChanged="N" value="T_html형식변환" />
+        <Property type="Flow" key="Output_htmlFinal" controlType="OutputControlType" valueType="System.Object" formatType="Variable" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="this.htmlFinal" />
+      </Properties>
+      <RelatedSteps />
+      <Script><![CDATA[RunTask(this, 'T_html형식변환', null);]]></Script>
+    </Step>
+    <Step id="S2e89f22c73c7440d9bba6cf0e75b66f8" ver="311240315" createVer="310230724" type="Flow" name="RunTask" dpName="RunTask" dpValue="this.sendmail, this.htmlFinal, this.senderMail" dpValue2="" dpImage="" tag="" depth="1" stmttype="Normal" enabled="True" mainSet="0">
+      <Properties id="9a964586-b945-477b-ac7d-24d383e97cda" type="Flow">
+        <Property type="Flow" key="Options_OnError" controlType="PropertyItemEventHandlerView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+        <Property type="Flow" key="Key_Description" controlType="PropertyItemTextEditorView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+        <Property type="Flow" key="Conditions_TaskName" controlType="String" valueType="System.String" formatType="String" required="False" visible="True" readonly="True" encrypted="False" isChanged="N" value="T_메일전송" />
+        <Property type="Flow" key="Input_recipientMail" controlType="InputControlType" valueType="System.Object" formatType="Variable" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="this.sendmail" />
+        <Property type="Flow" key="Input_htmlFinal" controlType="InputControlType" valueType="System.Object" formatType="Variable" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="this.htmlFinal" />
+        <Property type="Flow" key="Input_senderMail" controlType="InputControlType" valueType="System.Object" formatType="Variable" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="this.senderMail" />
+      </Properties>
+      <RelatedSteps />
+      <Script><![CDATA[RunTask(this, 'T_메일전송', {'recipientMail':this.sendmail, 'htmlFinal':this.htmlFinal, 'senderMail':this.senderMail});]]></Script>
+    </Step>
+  </Steps>
+  <JScript><![CDATA[function P_뉴스알리미() {
+
+    this.RPAGOTOENABLE = false;
+    this.GotoStepRetryCntMap = {};
+    this.GotoBlockMap = {4:[16],5:[15]};
+    this.GotoReverseBlockMap = {16:4,15:5};
+    this.GotoStepBlockTypeMap = {4:'Loop',16:'EndLoop',5:'SwitchGroup',15:'EndSwitchDefault'};
+
+
+    this.run = function() {
+
+        //------------------------------------------------
+        STEP('Sb1c451d54443402b8dccbbaf481589ed', '[1] CloseAll');
+        StepPlayer.Run('Win.CloseAll', this.closeall_info_1);
+
+        //------------------------------------------------
+        STEP('S853de342739c4e6a9bf2c9f440ae8966', '[2] RunTask');
+        RunTask(this, 'T_config에서_정보가져오기', null);
+
+        //------------------------------------------------
+        STEP('Se3b959db61e04e43a1589738719e3c8a', '[3] ExecuteScript');
+        // yyyy-mm-0d 형태 변환 함수 ex)2023-12-05
+        function leftPad(value) {
+        	if(value >= 10) {
+        		return value
+        	}
+
+        	return `0${value}`
+        }
+
+        // yyyy.mm.dd 형태로 바꾸는 함수
+        function getDateStr(myDate) {
+        	var year = myDate.getFullYear();
+        	var month = leftPad(myDate.getMonth() + 1);
+        	var day = leftPad(myDate.getDate());
+
+        	return year + '.' + month + '.' + day
+        }
+
+        // 이전 날짜 가져오는 함수
+        function getBeforeDate(i) {
+        	var d = new Date();
+        	var dayofMonth = d.getDate();
+        	d.setDate(dayofMonth - i);
+        	
+        	return getDateStr(d)
+        }
+
+        Global.today = getBeforeDate(0);        // 오늘 날짜
+        Global.yesterday = getBeforeDate(1);    // 하루전 날짜
+        Global.twodaysAgo = getBeforeDate(2);   // 이틀전 날짜
+
+        //------------------------------------------------
+        STEP('Sd1afd59fb50e4f14b16f267c97503093', '[4] For');
+        for (this.i = 0; this.i < this.searchE.length; this.i++) {
+
+            //------------------------------------------------
+            STEP('S5202430edde84dbfab588bf5b6d7ec41', '[5] SwitchGroup');
+            switch (this.searchE[this.i]) {
+
+                //------------------------------------------------
+                case '구글':{ 
+                STEP('S2e33ea1947cd40f7ad0db1179a86deb7', '[6] SwitchCase');
+
+                    //------------------------------------------------
+                    STEP('Sbde345f66c7b4505806cec95c2f8d800', '[7] RunTask');
+                    RunTask(this, 'T_구글크롤링', {'keyword':this.keyword});
+
+                //------------------------------------------------
+                STEP('S57159406f5384b9793d163021998ec37', '[8] EndSwitchCase');
+                break;
+                }
+
+                //------------------------------------------------
+                case '네이버':{ 
+                STEP('S30e406580280431b86cd5d4ffadbf07e', '[9] SwitchCase');
+
+                    //------------------------------------------------
+                    STEP('S9a94405efd4c46be9792fada616d98fe', '[10] RunTask');
+                    RunTask(this, 'T_네이버크롤링', {'keyword':this.keyword});
+
+                //------------------------------------------------
+                STEP('Sed6b06fa048844fa9110c083c48fb75e', '[11] EndSwitchCase');
+                break;
+                }
+
+                //------------------------------------------------
+                default:{ 
+                STEP('S3e379a2c8bd5402f9f12241eb939072b', '[12] SwitchDefault');
+
+                    //------------------------------------------------
+                    STEP('S6ab3f8ce20534d1087466ec208d9e17d', '[13] MessageBox');
+                    MsgBox('아직 없는 검색 엔진입니다');
+
+                    //------------------------------------------------
+                    STEP('S5d2dd9e3d57f4a34be428fb959d4b753', '[14] Assign');
+                    RESULT = '아직 없는 검색 엔진입니다';
+
+                //------------------------------------------------
+                STEP('S1f243a0bd1994bf49cfa13e15ad63173', '[15] EndSwitchDefault');
+                break;
+                }
+
+            }
+
+        //------------------------------------------------
+        }
+        STEP('S6d26b7cb9b66424897882217822152e8', '[16] End-For');
+
+        //------------------------------------------------
+        STEP('S81874f30c2ad427aa8389fca1c3303b9', '[17] RunTask');
+        RunTask(this, 'T_중복제거', null);
+
+        //------------------------------------------------
+        STEP('Se7c4c1c984da417ea9e581f95a01ebec', '[18] RunTask');
+        RunTask(this, 'T_html형식변환', null);
+
+        //------------------------------------------------
+        STEP('S2e89f22c73c7440d9bba6cf0e75b66f8', '[19] RunTask');
+        RunTask(this, 'T_메일전송', {'recipientMail':this.sendmail, 'htmlFinal':this.htmlFinal, 'senderMail':this.senderMail});
+
+
+    }
+
+    this.execute = function() {
+        var result = null;
+        result = this.run()
+        if (result != null)
+            return result;
+    }
+}
+]]></JScript>
+  <Diagram version="1.300" nodesize="Normal">
+    <StepNodes>
+      <StepNode step_id="Sb1c451d54443402b8dccbbaf481589ed" group_name="e171a1f4-214c-4904-a296-5ff5cf1fb32a_Untitled" folded="False" color="" />
+      <StepNode step_id="S853de342739c4e6a9bf2c9f440ae8966" group_name="" folded="False" color="" />
+      <StepNode step_id="Se3b959db61e04e43a1589738719e3c8a" group_name="e2675f76-5d52-44e8-a030-d69cc9457273_날짜 세팅" folded="False" color="" />
+      <StepNode step_id="Sd1afd59fb50e4f14b16f267c97503093" group_name="" folded="False" color="" />
+      <StepNode step_id="S5202430edde84dbfab588bf5b6d7ec41" group_name="" folded="True" color="" />
+      <StepNode step_id="S2e33ea1947cd40f7ad0db1179a86deb7" group_name="" folded="True" color="" />
+      <StepNode step_id="Sbde345f66c7b4505806cec95c2f8d800" group_name="" folded="True" color="" />
+      <StepNode step_id="S57159406f5384b9793d163021998ec37" group_name="" folded="True" color="" />
+      <StepNode step_id="S30e406580280431b86cd5d4ffadbf07e" group_name="" folded="True" color="" />
+      <StepNode step_id="S9a94405efd4c46be9792fada616d98fe" group_name="" folded="True" color="" />
+      <StepNode step_id="Sed6b06fa048844fa9110c083c48fb75e" group_name="" folded="True" color="" />
+      <StepNode step_id="S3e379a2c8bd5402f9f12241eb939072b" group_name="" folded="True" color="" />
+      <StepNode step_id="S6ab3f8ce20534d1087466ec208d9e17d" group_name="699e4962-37c6-43cb-8e93-a01e56221ced_Untitled" folded="False" color="" />
+      <StepNode step_id="S5d2dd9e3d57f4a34be428fb959d4b753" group_name="804a9d86-4a84-4edb-832e-66c2201f72c2_Untitled" folded="False" color="" />
+      <StepNode step_id="S1f243a0bd1994bf49cfa13e15ad63173" group_name="" folded="True" color="" />
+      <StepNode step_id="S6d26b7cb9b66424897882217822152e8" group_name="" folded="False" color="" />
+      <StepNode step_id="S81874f30c2ad427aa8389fca1c3303b9" group_name="" folded="False" color="" />
+      <StepNode step_id="Se7c4c1c984da417ea9e581f95a01ebec" group_name="" folded="False" color="" />
+      <StepNode step_id="S2e89f22c73c7440d9bba6cf0e75b66f8" group_name="" folded="False" color="" />
+    </StepNodes>
+  </Diagram>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>mLPoabWAChT7zQ+doVgzD236gfA=</DigestValue></Reference></SignedInfo><SignatureValue>rKf4LzDHavT9DBFx2Q0BJ/UfSJDTxHJq5sorvh/OTrx4vTZt3D/6sYjXZ9+BYotR1kdA1x1pAgvZshhynBCVYFQBo8T7K4jL0q1k+0Issb7pkHGk7OCP4w4Y7fZWEZZGz0PD+jwtw7U2m+11ex4Bmdk41pKNEMu7S9uqpENQ6MrbQNZmBThUMCq+SsWR60jUyOr30XdQHcWzZUh6VILrWB9i0S8f7AGjAAK+IsIMIMLR8FGhg+bCpI3tvrDuzitG06jiZWMmtwqO8Fcrv1kLiZRk4uF8TPIdjOm/u15v7gQ46tV3TKwvLG9jhAwIfs2A9JynQd+JxjHorxwLYNPZ7Q==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=DESIGNER-00039, O=192.168.0.50, OU=IPA_DESIGNER, L="", S="", C=""</X509SubjectName></X509Data></KeyInfo></Signature></Process>

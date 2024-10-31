@@ -1,0 +1,136 @@
+<Process id="c0060970-6e5e-48fc-9be2-445709462052" type="task" workType="foreground" name="T_날짜포맷" version="1.0" designerVersion="3.1.124.00322" readonly="false" isValid="true" DesignedBy="Designer" Template="" StepCount="2" Orientation="horizontal">
+  <Properties>
+    <Property key="Description" controlType="PropertyItemTextEditorView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" enabled="True" />
+    <Property key="onBefore" controlType="PropertyItemEventHandlerView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" enabled="True" />
+    <Property key="onAfter" controlType="PropertyItemEventHandlerView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" enabled="True" />
+    <Property key="onError" controlType="PropertyItemEventHandlerView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" enabled="True" />
+    <Property key="Timeout" controlType="Int32" valueType="System.Int32" formatType="Integer" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="0" />
+    <Property key="RunningTime" controlType="Int32" valueType="System.Int32" formatType="Integer" required="False" visible="True" readonly="True" encrypted="False" isChanged="N" value="9" />
+    <Property key="Os" controlType="String" valueType="System.String" formatType="String" required="False" visible="True" readonly="True" encrypted="False" isChanged="N" value="Microsoft Windows 11 Pro64비트" />
+    <Property key="Resolution" controlType="String" valueType="System.String" formatType="String_Size" required="False" visible="True" readonly="True" encrypted="False" isChanged="N" value="4320x1350" />
+    <Property key="CreatedDate" controlType="String" valueType="System.String" formatType="String_DateTime" required="False" visible="True" readonly="True" encrypted="False" isChanged="N" value="2024-03-12 09:53:05" />
+    <Property key="CreatedBy" controlType="String" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="eunsu9991" />
+    <Property key="LastModifiedDate" controlType="String" valueType="System.String" formatType="String_DateTime" required="False" visible="True" readonly="True" encrypted="False" isChanged="N" value="2024-09-03 13:39:56" />
+    <Property key="LastModifiedBy" controlType="String" valueType="System.String" formatType="String" required="False" visible="True" readonly="True" encrypted="False" isChanged="N" value="" />
+    <Property key="LastPublishedDate" controlType="String" valueType="System.String" formatType="String_DateTime" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+    <Property key="LastPublishedBy" controlType="String" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+  </Properties>
+  <LinkItems />
+  <Variables />
+  <Steps>
+    <Step id="S5d7f9aec6d9b40bd84bbe8dc264bab48" ver="311240315" createVer="311240219" type="Flow" name="ExecuteScript" dpName="ExecuteScript" dpValue="" dpValue2="" dpImage="" tag="" depth="1" stmttype="Normal" enabled="True" mainSet="0">
+      <Properties id="5cb0703d-b9ef-45b4-8b04-557fa8ee02af" type="Flow">
+        <Property type="Flow" key="Options_OnError" controlType="PropertyItemEventHandlerView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+        <Property type="Flow" key="Key_Description" controlType="PropertyItemTextEditorView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+        <Property type="Flow" key="Conditions_Title" controlType="String" valueType="System.String" formatType="String" required="True" visible="True" readonly="False" encrypted="False" isChanged="N" value="날짜 가져오기" />
+        <Property type="Flow" key="Key_Script" controlType="PropertyItemTextEditorView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="// yyyy-mm-0d 형태 변환 함수 ex)2023-12-05&#xD;&#xA;function leftPad(value) {&#xD;&#xA;&#x9;if(value &gt;= 10) {&#xD;&#xA;&#x9;&#x9;return value&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;return `0${value}`&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;// yyyy.mm.dd 형태로 바꾸는 함수&#xD;&#xA;function getDateStr(myDate) {&#xD;&#xA;&#x9;var year = myDate.getFullYear();&#xD;&#xA;&#x9;var month = leftPad(myDate.getMonth() + 1);&#xD;&#xA;&#x9;var day = leftPad(myDate.getDate());&#xD;&#xA;&#xD;&#xA;&#x9;return year + '.' + month + '.' + day&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;// 이전 날짜 가져오는 함수&#xD;&#xA;function getBeforeDate(i) {&#xD;&#xA;&#x9;var d = new Date();&#xD;&#xA;&#x9;var dayofMonth = d.getDate();&#xD;&#xA;&#x9;d.setDate(dayofMonth - i);&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;return getDateStr(d)&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;Global.today = getBeforeDate(0);        // 오늘 날짜&#xD;&#xA;Global.yesterday = getBeforeDate(1);    // 하루전 날짜&#xD;&#xA;Global.twodaysAgo = getBeforeDate(2);   // 이틀전 날짜" />
+      </Properties>
+      <RelatedSteps />
+      <Script><![CDATA[// yyyy-mm-0d 형태 변환 함수 ex)2023-12-05
+function leftPad(value) {
+	if(value >= 10) {
+		return value
+	}
+
+	return `0${value}`
+}
+
+// yyyy.mm.dd 형태로 바꾸는 함수
+function getDateStr(myDate) {
+	var year = myDate.getFullYear();
+	var month = leftPad(myDate.getMonth() + 1);
+	var day = leftPad(myDate.getDate());
+
+	return year + '.' + month + '.' + day
+}
+
+// 이전 날짜 가져오는 함수
+function getBeforeDate(i) {
+	var d = new Date();
+	var dayofMonth = d.getDate();
+	d.setDate(dayofMonth - i);
+	
+	return getDateStr(d)
+}
+
+Global.today = getBeforeDate(0);        // 오늘 날짜
+Global.yesterday = getBeforeDate(1);    // 하루전 날짜
+Global.twodaysAgo = getBeforeDate(2);   // 이틀전 날짜]]></Script>
+    </Step>
+    <Step id="Sb62583c4c3ce4c63bedca7647c13ce75" ver="311240315" createVer="311240219" type="Desktop" name="MessageBox" dpName="MessageBox" dpValue="Global.today + &quot;&#xA;&quot; + Global.yesterday + &quot;&#xA;&quot; + Global.twodaysAgo" dpValue2="" dpImage="" tag="" depth="1" stmttype="Normal" enabled="True" mainSet="0">
+      <Properties id="f78af286-dcd0-45d6-a72e-9c69b311e5eb" type="Desktop">
+        <Property type="Desktop" key="Options_OnError" controlType="PropertyItemEventHandlerView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+        <Property type="Desktop" key="Key_Description" controlType="PropertyItemTextEditorView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+        <Property type="Desktop" key="Conditions_Arguments" controlType="Object" valueType="System.Object" formatType="Any" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="Global.today + &quot;\n&quot; + Global.yesterday + &quot;\n&quot; + Global.twodaysAgo" />
+        <Property type="Desktop" key="Command_Timeout" controlType="Int32" valueType="System.Int32" formatType="Integer" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+      </Properties>
+      <RelatedSteps />
+      <Script><![CDATA[MsgBox(Global.today + "\n" + Global.yesterday + "\n" + Global.twodaysAgo);]]></Script>
+    </Step>
+  </Steps>
+  <JScript><![CDATA[function T_날짜포맷() {
+
+    this.RPAGOTOENABLE = false;
+    this.GotoStepRetryCntMap = {};
+    this.GotoBlockMap = {};
+    this.GotoReverseBlockMap = {};
+    this.GotoStepBlockTypeMap = {};
+
+
+    this.run = function() {
+
+        //------------------------------------------------
+        STEP('S5d7f9aec6d9b40bd84bbe8dc264bab48', '[1] ExecuteScript');
+        // yyyy-mm-0d 형태 변환 함수 ex)2023-12-05
+        function leftPad(value) {
+        	if(value >= 10) {
+        		return value
+        	}
+
+        	return `0${value}`
+        }
+
+        // yyyy.mm.dd 형태로 바꾸는 함수
+        function getDateStr(myDate) {
+        	var year = myDate.getFullYear();
+        	var month = leftPad(myDate.getMonth() + 1);
+        	var day = leftPad(myDate.getDate());
+
+        	return year + '.' + month + '.' + day
+        }
+
+        // 이전 날짜 가져오는 함수
+        function getBeforeDate(i) {
+        	var d = new Date();
+        	var dayofMonth = d.getDate();
+        	d.setDate(dayofMonth - i);
+        	
+        	return getDateStr(d)
+        }
+
+        Global.today = getBeforeDate(0);        // 오늘 날짜
+        Global.yesterday = getBeforeDate(1);    // 하루전 날짜
+        Global.twodaysAgo = getBeforeDate(2);   // 이틀전 날짜
+
+        //------------------------------------------------
+        STEP('Sb62583c4c3ce4c63bedca7647c13ce75', '[2] MessageBox');
+        MsgBox(Global.today + "\n" + Global.yesterday + "\n" + Global.twodaysAgo);
+
+
+    }
+
+    this.execute = function() {
+        var result = null;
+        result = this.run()
+        if (result != null)
+            return result;
+    }
+}
+]]></JScript>
+  <Diagram version="1.300" nodesize="Normal">
+    <StepNodes>
+      <StepNode step_id="S5d7f9aec6d9b40bd84bbe8dc264bab48" group_name="dc88afdf-a144-4a76-80b8-6ec32730fcd2_Untitled" folded="False" color="" />
+      <StepNode step_id="Sb62583c4c3ce4c63bedca7647c13ce75" group_name="dc88afdf-a144-4a76-80b8-6ec32730fcd2_Untitled" folded="False" color="" />
+    </StepNodes>
+  </Diagram>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>rI4MPIrE7rUS1zaMsdjJPs1hwwo=</DigestValue></Reference></SignedInfo><SignatureValue>JZgmb6DsPkxmzMTNSDpy7PvoX4Mfm50zo2Trjepjz9f75BEwa3+iSXxAhJz2iTT+anpdsYjUPfr80iumhuvQtrO1HY5vEUnz9/d4CQY7Igb4LF2LqC22zE5L+WYJdaePo9XhuF6Ste0d4inNqMXk0l2r+ph8eKIanjX09Y7/esxc2QPQ2eDkx0IsSYoR1Fg+AfuUUH400dNJc8tl7leSC30PKnFaeNz8apq6busgK3ktjNl3+daoBY0yw5ILivQn6EZigCiqtQNLXE+/KZAgmLt9ezlpM7kw4nhjKbzJR2wQtsqpjdm7M9EYD3NZz/W2fMh+W/0YOUiUY5FjVvqFlw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=DESIGNER-00039, O=192.168.0.50, OU=IPA_DESIGNER, L="", S="", C=""</X509SubjectName></X509Data></KeyInfo></Signature></Process>
